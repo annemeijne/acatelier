@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ACA — Annemeijne's Creatieve Atelier. Unieke handgemaakte, gehaakte, gebreide en geschreven creaties uit Nijmegen.">
+  <title>ACA — Annemeijne's Creatieve Atelier</title>
+  <style>
+    :root{--cream:#FAF7F2;--white:#FFFDFB;--linen:#EDE8E0;--taupe:#C9BDB1;--stone:#9B8F82;--charcoal:#2D2925;--terracotta:#D4A59A;--dusty:#E8CCC9;--sage:#B8C4B8;--max:1440px;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--charcoal);font-family:var(--sans);line-height:1.6} a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    .topbar{background:var(--dusty);border-bottom:1px solid var(--taupe);padding:9px 20px;text-align:center;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700}
+    .header{position:sticky;top:0;z-index:10;background:rgba(250,247,242,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--taupe)}
+    .nav{max-width:var(--max);margin:auto;min-height:100px;padding:0 34px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}.nav-left,.nav-right{display:flex;align-items:center;gap:28px;font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:700}.nav-right{justify-content:flex-end}.brand{width:175px}.brand img{mix-blend-mode:multiply}.cart{border:1px solid var(--taupe);background:var(--white);padding:10px 13px}
+    .dropdown{position:relative}.drop{position:absolute;top:100%;left:-16px;min-width:210px;padding:12px;background:var(--white);border:1px solid var(--taupe);opacity:0;pointer-events:none;transform:translateY(6px);transition:.2s}.dropdown:hover .drop{opacity:1;pointer-events:auto;transform:none}.drop a{display:block;padding:9px 8px}.drop a:hover{background:var(--linen)}
+    .hero{max-width:var(--max);margin:auto;padding:26px 34px 68px}.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:690px;border:1px solid var(--taupe);background:var(--white)}.hero-copy{padding:clamp(42px,5vw,86px);display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--taupe)}.eyebrow{margin:0 0 20px;color:var(--stone);font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:700}h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0}h1{font-size:clamp(60px,7.4vw,115px);line-height:.87;letter-spacing:-.055em;max-width:650px}.hero-copy>p:not(.eyebrow){margin:30px 0 0;color:var(--stone);max-width:480px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:1px solid var(--terracotta);background:var(--terracotta);text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:700}.btn.alt{background:transparent;border-color:var(--taupe)}.btn:hover{background:var(--dusty)}
+    .placeholder{background:#fff;display:flex;align-items:center;justify-content:center;color:rgba(155,143,130,.5);text-transform:uppercase;letter-spacing:.15em;font-size:9px;text-align:center;padding:20px}.hero-image{min-height:690px}
+    .marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe);background:var(--linen);padding:10px 0}.marquee div{display:inline-block;min-width:200%;animation:move 30s linear infinite;font-size:10px;text-transform:uppercase;letter-spacing:.16em}@keyframes move{to{transform:translateX(-50%)}}
+    .section{max-width:var(--max);margin:auto;padding:90px 34px}.head{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:end;margin-bottom:40px}.head h2{font-size:clamp(50px,6vw,92px);line-height:.9;letter-spacing:-.045em}.head>p{margin:0;color:var(--stone);max-width:440px;justify-self:end}
+    .cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--taupe)}.card .placeholder{aspect-ratio:4/5;border-bottom:1px solid var(--taupe)}.card-copy{padding:22px;display:flex;justify-content:space-between;gap:18px;align-items:flex-end}.card-copy h3{font-size:31px;line-height:1}.card-copy p{margin:7px 0 0;color:var(--stone);font-size:12px}.tiny{color:var(--stone);font-size:9px;text-transform:uppercase;letter-spacing:.13em}
+    .editorial{background:var(--linen);border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe)}.editorial-inner{max-width:var(--max);margin:auto;padding:82px 34px;display:grid;grid-template-columns:1fr 1fr;gap:74px;align-items:center}.editorial .placeholder{aspect-ratio:5/6;border:1px solid var(--taupe)}.editorial-copy h2{font-size:clamp(52px,6.4vw,98px);line-height:.9;letter-spacing:-.05em;margin-bottom:28px}.editorial-copy p{margin:0;color:var(--stone);max-width:590px;line-height:1.85}.editorial-copy .btn{margin-top:28px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product{background:var(--white);border:1px solid var(--taupe)}.product .placeholder{aspect-ratio:4/5;border-bottom:1px solid var(--taupe)}.product-copy{padding:16px}.product h3{font-family:var(--sans);font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;margin-bottom:7px}.product p{margin:0;color:var(--stone);font-size:12px}.stock{display:inline-block;margin-top:9px;padding:5px 7px;background:var(--linen);font-size:8px;text-transform:uppercase;letter-spacing:.11em}
+    .order{background:var(--dusty);border-top:1px solid var(--taupe);border-bottom:1px solid var(--taupe)}.order-inner{max-width:var(--max);margin:auto;padding:82px 34px}.steps{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--taupe);border-top:1px solid var(--taupe);margin-top:38px}.step{min-height:240px;padding:28px;background:var(--white);border-right:1px solid var(--taupe);border-bottom:1px solid var(--taupe)}.num{color:var(--terracotta);font-size:9px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:58px}.step h3{font-size:31px;margin-bottom:12px}.step p{margin:0;color:var(--stone);font-size:13px}
+    .newsletter{max-width:var(--max);margin:auto;padding:82px 34px 108px}.newsletter-box{background:var(--sage);border:1px solid var(--taupe);padding:52px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.newsletter h2{font-size:clamp(52px,6.4vw,94px);line-height:.9;letter-spacing:-.05em}.newsletter p{margin:0 0 18px;color:rgba(45,41,37,.72)}.signup{display:flex;border-bottom:1px solid var(--charcoal)}.signup input{flex:1;min-width:0;border:0;outline:0;background:transparent;padding:13px 0}.signup button{border:0;background:transparent;text-transform:uppercase;letter-spacing:.12em;font-size:9px;font-weight:700}
+    footer{background:var(--charcoal);color:var(--cream)}.footer-inner{max-width:var(--max);margin:auto;padding:56px 34px 32px}.footer-grid{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:52px;padding-bottom:52px}.footer-brand img{width:145px;filter:brightness(0) invert(1);margin-bottom:18px}.footer-brand p,.footer-col a{color:rgba(250,247,242,.62);font-size:12px}.footer-col h4{margin:0 0 18px;text-transform:uppercase;letter-spacing:.13em;font-size:9px}.footer-col a{display:block;margin:8px 0}.footer-bottom{border-top:1px solid rgba(250,247,242,.16);padding-top:22px;display:flex;justify-content:space-between;gap:20px;color:rgba(250,247,242,.45);font-size:10px}
+    @media(max-width:1000px){.nav{grid-template-columns:auto 1fr auto}.nav-left{display:none}.brand{justify-self:start}.hero-grid,.editorial-inner,.newsletter-box{grid-template-columns:1fr}.hero-copy{border-right:0;border-bottom:1px solid var(--taupe)}.hero-image{min-height:500px}.head{grid-template-columns:1fr}.head>p{justify-self:start}.cats{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:650px){.nav{min-height:80px;padding:0 18px}.brand{width:115px}.nav-right .nav-link{display:none}.hero,.section,.editorial-inner,.order-inner,.newsletter,.footer-inner{padding-left:18px;padding-right:18px}.hero{padding-top:18px}.hero-copy{padding:34px 24px}.hero-image{min-height:410px}.cats,.products,.steps,.footer-grid{grid-template-columns:1fr}.newsletter-box{padding:32px 24px}.footer-bottom{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar">Handgemaakt in Nijmegen · kleine oplages · alleen wat er echt is</div>
+  <header class="header">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <div class="nav-left">
+        <div class="dropdown"><a class="nav-link" href="#creaties">Creaties</a><div class="drop"><a href="#kleding">Kleding</a><a href="#tierlantijnen">Tierlantijnen</a><a href="#geschreven">Geschreven</a></div></div>
+        <a class="nav-link" href="#over">Over ACA</a><a class="nav-link" href="#faq">FAQ</a>
+      </div>
+      <a class="brand" href="#"><img src="aca-logo.png" alt="ACA logo"></a>
+      <div class="nav-right"><a class="nav-link" href="#contact">Contact</a><a class="cart" href="#winkelmandje">Winkelmandje · 0</a></div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero"><div class="hero-grid">
+      <div class="hero-copy"><p class="eyebrow">Annemeijne's Creatieve Atelier</p><h1>Een beetje van mij, gemaakt voor jou.</h1><p>ACA is mijn kleine creatieve atelier vol handgemaakte, gehaakte, gebreide en geschreven creaties. Geen grote voorraad en geen massaproductie — meestal bestaat ieder stuk maar één keer.</p><div class="actions"><a class="btn" href="#creaties">Bekijk creaties</a><a class="btn alt" href="#over">Mijn verhaal</a></div></div>
+      <div class="hero-image placeholder">Sfeerfoto / hoofdfoto</div>
+    </div></section>
+
+    <div class="marquee"><div>ACA · ANNEMEIJNE'S CREATIEVE ATELIER · HANDGEMAAKT · GEHAAKT · GEBREID · KAARTEN · GESCHREVEN · KLEINE OPLAGES · ACA · ANNEMEIJNE'S CREATIEVE ATELIER · HANDGEMAAKT · GEHAAKT · GEBREID · KAARTEN · GESCHREVEN · KLEINE OPLAGES ·</div></div>
+
+    <section class="section" id="creaties"><div class="head"><div><p class="eyebrow">Ontdek ACA</p><h2>Creaties</h2></div><p>Van kleding tot kleine tierlantijnen en geschreven werk. Alles wat je hier vindt, heb ik zelf bedacht, gemaakt en uitgezocht.</p></div>
+      <div class="cats">
+        <a class="card" id="kleding" href="#"><div class="placeholder">Foto kleding</div><div class="card-copy"><div><h3>Kleding</h3><p>Gehaakt en gebreid</p></div><span class="tiny">Bekijk</span></div></a>
+        <a class="card" id="tierlantijnen" href="#"><div class="placeholder">Foto tierlantijnen</div><div class="card-copy"><div><h3>Tierlantijnen</h3><p>Tassen, sleeves, boekenleggers en meer</p></div><span class="tiny">Bekijk</span></div></a>
+        <a class="card" id="geschreven" href="#"><div class="placeholder">Foto geschreven</div><div class="card-copy"><div><h3>Geschreven</h3><p>Kaarten, typemachinewerk en papier</p></div><span class="tiny">Bekijk</span></div></a>
+      </div>
+    </section>
+
+    <section class="editorial" id="over"><div class="editorial-inner"><div class="placeholder">Foto Annemeijne / atelier</div><div class="editorial-copy"><p class="eyebrow">Over ACA</p><h2>Creativiteit die nooit echt is gestopt.</h2><p>Ik ben Annemeijne, uit Nijmegen. Knutselen, hobbyen en creëren heb ik eigenlijk altijd gedaan — van borduren en schrijven tot collages maken. Tijdens covid begon ik met haken en sindsdien is dat nooit meer echt gestopt. Door de jaren heen maakte ik kleding, cadeautjes en allerlei kleine dingen voor mezelf en anderen. Op een gegeven moment vond ik dat mijn creaties het verdienden om nog wat verder de wereld in te gaan. En voilà: ACA was geboren.</p><a class="btn alt" href="#">Lees meer over ACA</a></div></div></section>
+
+    <section class="section"><div class="head"><div><p class="eyebrow">Nu beschikbaar</p><h2>Een paar creaties</h2></div><p>De meeste ontwerpen bestaan maar één keer. Soms maak ik toevallig een tweede of derde exemplaar, maar ik werk niet op bestelling.</p></div>
+      <div class="products">
+        <article class="product"><div class="placeholder">Productfoto</div><div class="product-copy"><h3>Gehaakt okergeel vestje</h3><p>€ —</p><span class="stock">1 beschikbaar</span></div></article>
+        <article class="product"><div class="placeholder">Productfoto</div><div class="product-copy"><h3>Deep aqua truitje</h3><p>€ —</p><span class="stock">1 beschikbaar</span></div></article>
+        <article class="product"><div class="placeholder">Productfoto</div><div class="product-copy"><h3>Gebreide roze sjaal</h3><p>€ —</p><span class="stock">1 beschikbaar</span></div></article>
+        <article class="product"><div class="placeholder">Productfoto</div><div class="product-copy"><h3>Gehaakte laptop sleeve</h3><p>€ —</p><span class="stock">1 beschikbaar</span></div></article>
+      </div>
+    </section>
+
+    <section class="order"><div class="order-inner"><div class="head"><div><p class="eyebrow">Bestellen bij ACA</p><h2>Persoonlijk en eenvoudig.</h2></div><p>Voorlopig betaal je nog niet direct op de website. Je plaatst eerst je bestelling; daarna ontvang je van mij een betaallink.</p></div><div class="steps">
+      <div class="step"><div class="num">Stap 01</div><h3>Kies je creatie</h3><p>Voeg een beschikbaar item toe aan je winkelmandje en plaats je orderaanvraag.</p></div>
+      <div class="step"><div class="num">Stap 02</div><h3>Betaallink</h3><p>Ik controleer de beschikbaarheid en stuur je daarna persoonlijk een betaallink.</p></div>
+      <div class="step"><div class="num">Stap 03</div><h3>Bevestigd</h3><p>Zodra de betaling is voldaan, is je order definitief bevestigd en maak ik hem klaar voor verzending of ophalen.</p></div>
+    </div></div></section>
+
+    <section class="newsletter"><div class="newsletter-box"><div><p class="eyebrow">ACA post</p><h2>Nieuwe dingen, wanneer ze er zijn.</h2></div><div><p>Geen wekelijkse drops of eindeloze voorraad. Als ik iets nieuws heb gemaakt, kun je het hier als eerste horen.</p><form class="signup" onsubmit="event.preventDefault()"><input type="email" placeholder="E-mailadres" aria-label="E-mailadres"><button type="submit">Inschrijven</button></form></div></div></section>
+  </main>
+
+  <footer id="contact"><div class="footer-inner"><div class="footer-grid"><div class="footer-brand"><img src="aca-logo.png" alt="ACA"><p>Annemeijne's Creatieve Atelier. Handgemaakte creaties uit Nijmegen.</p></div><div class="footer-col"><h4>Creaties</h4><a href="#kleding">Kleding</a><a href="#tierlantijnen">Tierlantijnen</a><a href="#geschreven">Geschreven</a></div><div class="footer-col"><h4>ACA</h4><a href="#over">Over ACA</a><a href="#contact">Contact</a><a href="#" id="faq">Veelgestelde vragen</a></div><div class="footer-col"><h4>Informatie</h4><a href="#">Bestellen & betalen</a><a href="#">Verzending & ophalen</a><a href="#">Retourneren</a><a href="#">Privacy</a><a href="#">Voorwaarden</a></div></div><div class="footer-bottom"><span>© ACA — Annemeijne's Creatieve Atelier</span><span>Handgemaakt in Nijmegen</span></div></div></footer>
+</body>
+</html>
