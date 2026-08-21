@@ -705,16 +705,18 @@ footer {
 
 .brand {
   width: 190px !important;
+  height: auto !important;
   background: transparent !important;
+  align-self: center;
 }
 
 .brand img {
   width: 100%;
+  height: auto;
   display: block;
   background: transparent !important;
 }
 
-.site-header,
-.nav {
-  background-color: var(--cream);
+.site-header {
+  overflow: hidden;
 }
