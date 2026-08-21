@@ -718,6 +718,10 @@ footer {
 }
 
 .site-header {
+  overflow: visible;
+}
+
+.brand {
   overflow: hidden;
 }
 
