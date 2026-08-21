@@ -702,3 +702,19 @@ footer {
     gap: 8px;
   }
 }
+
+.brand {
+  width: 190px !important;
+  background: transparent !important;
+}
+
+.brand img {
+  width: 100%;
+  display: block;
+  background: transparent !important;
+}
+
+.site-header,
+.nav {
+  background-color: var(--cream);
+}
