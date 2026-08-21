@@ -759,3 +759,102 @@ footer {
   .product-gallery .gallery-large{grid-column:auto}
   .product-gallery figure,.product-gallery .gallery-large{min-height:440px}
 }
+
+/* ===== LIGHTBOX / FOTO GALERIJ ===== */
+
+.product-gallery img,
+.product-hero-image img {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(45, 41, 37, 0.94);
+  padding: 40px 80px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  color: var(--cream);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.lightbox-close {
+  top: 22px;
+  right: 28px;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 64px;
+  line-height: 1;
+  padding: 20px;
+}
+
+.lightbox-prev {
+  left: 18px;
+}
+
+.lightbox-next {
+  right: 18px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: var(--terracotta);
+}
+
+@media (max-width: 650px) {
+  .lightbox {
+    padding: 60px 20px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    font-size: 46px;
+    padding: 8px;
+  }
+
+  .lightbox-prev {
+    left: 2px;
+  }
+
+  .lightbox-next {
+    right: 2px;
+  }
+
+  .lightbox-close {
+    top: 16px;
+    right: 18px;
+    font-size: 36px;
+  }
+}
