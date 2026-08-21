@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;500;600&display=swap');
 :root {
   --cream: #FAF7F2;
   --warm-white: #FFFDFB;
@@ -11,7 +12,7 @@
   --clay: #C2A291;
 
   --max-width: 1440px;
-  --serif: Georgia, "Times New Roman", serif;
+  --serif: "Bricolage Grotesque", Arial, sans-serif;
   --sans: Arial, Helvetica, sans-serif;
 }
 
