@@ -64,7 +64,7 @@ function getProductDate(product) {
   return 0;
 }
 
-function sortProducts(productsList, sortValue) {
+function sortProducts(productsList, sortValue, category) {
   const sorted = [...productsList];
 
   switch (sortValue) {
@@ -103,20 +103,18 @@ function sortProducts(productsList, sortValue) {
       });
 
     case "recommended":
-    default:
-      return sorted.sort(([, a], [, b]) => {
-        const orderA =
-          typeof a.recommendedOrder === "number"
-            ? a.recommendedOrder
-            : 999;
+default:
+  return sorted.sort(([slugA], [slugB]) => {
+    const order = recommendedOrder[category] || [];
 
-        const orderB =
-          typeof b.recommendedOrder === "number"
-            ? b.recommendedOrder
-            : 999;
+    const indexA = order.indexOf(slugA);
+    const indexB = order.indexOf(slugB);
 
-        return orderA - orderB;
-      });
+    const safeA = indexA === -1 ? 999 : indexA;
+    const safeB = indexB === -1 ? 999 : indexB;
+
+    return safeA - safeB;
+  });
   }
 }
 
@@ -142,10 +140,11 @@ function renderProducts() {
     ? sortSelect.value
     : "recommended";
 
-  categoryProducts = sortProducts(
-    categoryProducts,
-    sortValue
-  );
+ categoryProducts = sortProducts(
+  categoryProducts,
+  sortValue,
+  category
+);
 
   grid.innerHTML = "";
 
