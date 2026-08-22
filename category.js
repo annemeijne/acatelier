@@ -57,8 +57,8 @@ function getNumericPrice(product) {
 }
 
 function getProductDate(product) {
-  if (product.date) {
-    return new Date(product.date).getTime();
+  if (product.publishedDate) {
+    return new Date(product.publishedDate).getTime();
   }
 
   return 0;
