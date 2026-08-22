@@ -8,6 +8,10 @@ const products = {
     price: "Prijs volgt",
     availability: "Uniek exemplaar",
 
+    publishedDate: "2026-08-21",
+    priceValue: null,
+    recommendedOrder: 2,
+
     lead:
       "Een handgehaakte haltertop in een diepe bordeauxkleur. De top sluit in de nek met een kunststof gesp en is helemaal zonder patroon ontstaan.",
 
@@ -46,6 +50,9 @@ const products = {
   price: "Prijs volgt",
   availability: "Uniek exemplaar",
 
+    publishedDate: "2026-08-21",
+    priceValue: null,
+    recommendedOrder: 1,
   lead:
     "Een handgehaakte cropped sweater in zachte tinten groen, blauw, lila en crème. Verschillende soorten garen en de zichtbare losse draden geven het ontwerp zijn eigen, onregelmatige karakter.",
 
