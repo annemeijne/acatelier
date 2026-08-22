@@ -11,6 +11,7 @@
   --clay: #C2A291;
 
   --max-width: 1440px;
+
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
@@ -77,24 +78,25 @@ h3 {
 
   color: var(--stone);
 
+  font-family: var(--sans);
   font-size: 11.5px;
   line-height: 1.4;
   font-weight: 700;
 
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
 }
 
 .page-title {
-  font-size: clamp(42px, 4vw, 60px);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
+  font-size: clamp(38px, 3.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 .section-title {
-  font-size: clamp(34px, 3.2vw, 48px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(30px, 2.6vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 
@@ -166,6 +168,7 @@ h3 {
 
 .nav-link {
   position: relative;
+
   padding: 10px 0;
 }
 
@@ -206,6 +209,7 @@ h3 {
   height: auto;
 
   background: transparent;
+
   mix-blend-mode: multiply;
 }
 
@@ -241,6 +245,7 @@ h3 {
   z-index: 100;
 
   min-width: 220px;
+
   padding: 12px;
 
   background: var(--warm-white);
@@ -289,6 +294,7 @@ h3 {
 
 .button {
   min-height: 46px;
+
   padding: 0 22px;
 
   display: inline-flex;
@@ -353,6 +359,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: auto;
+
   padding: 28px 34px 70px;
 }
 
@@ -377,9 +384,12 @@ h3 {
 }
 
 .hero-copy h1 {
-  font-size: clamp(46px, 4.8vw, 70px);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  font-family: var(--serif);
+
+  font-size: clamp(40px, 3.8vw, 54px);
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: -0.025em;
 }
 
 .hero-copy > p:not(.eyebrow) {
@@ -414,6 +424,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: auto;
+
   padding: 46px 34px;
 }
 
@@ -431,6 +442,7 @@ h3 {
   max-width: 470px;
 
   margin: 0;
+
   justify-self: end;
 
   color: var(--stone);
@@ -448,6 +460,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: auto;
+
   padding: 54px 34px 30px;
 }
 
@@ -501,8 +514,10 @@ h3 {
 }
 
 .category-copy h3 {
-  font-size: 28px;
-  line-height: 1.05;
+  font-family: var(--serif);
+
+  font-size: 26px;
+  line-height: 1.08;
 }
 
 .category-copy p {
@@ -549,6 +564,7 @@ h3 {
 .product-card .placeholder,
 .product-card > img {
   width: 100%;
+
   aspect-ratio: 4 / 4.6;
 
   object-fit: cover;
@@ -637,6 +653,7 @@ h3 {
 
 .product-toolbar select:focus {
   outline: none;
+
   border-bottom-color: var(--terracotta);
 }
 
@@ -649,6 +666,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: auto;
+
   padding: 62px 34px 92px;
 
   display: grid;
@@ -697,6 +715,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: 0 auto;
+
   padding: 0 34px 90px;
 }
 
@@ -784,10 +803,11 @@ h3 {
   margin-bottom: 20px;
 
   font-family: var(--serif);
+  font-weight: 400;
 
-  font-size: clamp(30px, 2.8vw, 42px);
-  line-height: 1.07;
-  letter-spacing: -0.025em;
+  font-size: clamp(28px, 2.4vw, 36px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
 }
 
 .about-story p:not(.eyebrow) {
@@ -970,6 +990,7 @@ h3 {
   max-width: var(--max-width);
 
   margin: 0 auto;
+
   padding: 38px 34px 100px;
 }
 
@@ -1028,9 +1049,12 @@ h3 {
 }
 
 .product-title {
-  font-size: clamp(42px, 4.3vw, 62px);
-  line-height: 1;
-  letter-spacing: -0.035em;
+  font-family: var(--serif);
+  font-weight: 400;
+
+  font-size: clamp(36px, 3.2vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
 .product-lead {
@@ -1075,6 +1099,7 @@ h3 {
 
   color: var(--stone);
 
+  font-family: var(--sans);
   font-size: 10.5px;
   line-height: 1.4;
   font-weight: 700;
@@ -1347,6 +1372,7 @@ footer {
   max-width: var(--max-width);
 
   margin: auto;
+
   padding: 70px 34px 32px;
 }
 
@@ -1579,19 +1605,28 @@ footer {
   }
 
   .page-title {
-    font-size: clamp(38px, 11vw, 50px);
+    font-size: 36px;
+    line-height: 1.08;
   }
 
   .section-title {
-    font-size: clamp(32px, 9vw, 42px);
+    font-size: 29px;
+    line-height: 1.12;
   }
 
   .hero-copy h1 {
-    font-size: clamp(42px, 12vw, 56px);
+    font-size: 40px;
+    line-height: 1.06;
   }
 
   .product-title {
-    font-size: clamp(38px, 11vw, 50px);
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .about-story h2 {
+    font-size: 28px;
+    line-height: 1.12;
   }
 
 
@@ -1680,10 +1715,6 @@ footer {
 
   .about-story {
     padding: 26px 22px;
-  }
-
-  .about-story h2 {
-    font-size: 32px;
   }
 
   .about-closing {
@@ -1779,127 +1810,5 @@ footer {
     flex-direction: column;
 
     gap: 8px;
-  }
-}
-
-/* =========================================
-   ACA — SIMPELE TYPOGRAFISCHE BASIS
-========================================= */
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-/* Kleine labels */
-
-.eyebrow,
-.meta-label {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.4;
-  font-weight: 600;
-  letter-spacing: 0.10em;
-  text-transform: uppercase;
-}
-
-/* Algemene paginatitel */
-
-.page-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 3.6vw, 52px);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-}
-
-/* Sectietitels */
-
-.section-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(30px, 2.7vw, 38px);
-  line-height: 1.12;
-  font-weight: 500;
-  letter-spacing: -0.025em;
-}
-
-/* Homepage hoofdtitel */
-
-.hero-copy h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(40px, 4vw, 54px);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-}
-
-/* Producttitel */
-
-.product-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(36px, 3.4vw, 48px);
-  line-height: 1.08;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-}
-
-/* Over ACA verhalen */
-
-.about-story h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(27px, 2.4vw, 34px);
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-
-/* Gewone tekst */
-
-.page-intro p:not(.eyebrow),
-.hero-copy > p:not(.eyebrow),
-.about-profile-copy p:not(.eyebrow),
-.about-story p:not(.eyebrow),
-.section-head > p,
-.product-story p:last-child,
-.contact-text p {
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-/* Minder overdreven witruimte */
-
-.page-intro {
-  padding-top: 48px;
-  padding-bottom: 24px;
-}
-
-.section {
-  padding-top: 42px;
-  padding-bottom: 42px;
-}
-
-/* Mobiel */
-
-@media (max-width: 650px) {
-
-  .page-title {
-    font-size: 38px;
-  }
-
-  .section-title {
-    font-size: 30px;
-  }
-
-  .hero-copy h1 {
-    font-size: 40px;
-  }
-
-  .product-title {
-    font-size: 36px;
-  }
-
-  .about-story h2 {
-    font-size: 28px;
   }
 }
