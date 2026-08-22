@@ -221,5 +221,51 @@ const products = {
       alt: "Losse gehaakte granny squares voor de Sunny granny top tijdens het ontwerpproces"
     }
   ]
-}
+},
+
+    "queen-bee-top": {
+    name: "Queen bee top",
+    category: "Kleding",
+    categoryUrl: "/creaties/kleding/",
+
+    price: "Prijs volgt",
+    availability: "Beschikbaar",
+
+    publishedDate: "2026-08-23",
+    priceValue: null,
+
+    lead:
+      "Een oranje gebreide haltertop met donkerblauwe en witte strepen, geïnspireerd op Koningsdag. De top is gemaakt met een Sentro knitting machine en heeft door het breisel een redelijk elastische pasvorm.",
+
+    storyTitle: "Gemaakt voor Koningsdag.",
+
+    story:
+      "De Queen bee top maakte ik in 2025, geïnspireerd op Koningsdag. Voor deze top gebruikte ik een Sentro knitting machine en acrylgaren in oranje, donkerblauw en wit. De verschillende gebreide delen zijn samengevoegd tot een aansluitende haltertop met striksluiting in de nek. Het breisel is redelijk rekbaar, maar bij een lichaamsomvang van ongeveer 80 cm zit de top al vrij strak.",
+
+    details: [
+      ["Materiaal", "Acrylgaren"],
+      ["Techniek", "Gebreid met een Sentro knitting machine"],
+      ["Sluiting", "Striksluiting in de nek"],
+      ["Pasvorm", "Aansluitend en redelijk rekbaar — bij een omvang van circa 80 cm al vrij strak"],
+      ["Inspiratie", "Koningsdag"],
+      ["Jaar", "2025"],
+      ["Beschikbaarheid", "Beschikbaar"]
+    ],
+
+    mainImage: {
+      src: "/creaties/kleding/queen-bee-top/images/queen-bee-1.jpeg",
+      alt: "Oranje gebreide Queen bee top van ACA gedragen, met donkerblauwe en witte strepen"
+    },
+
+    images: [
+      {
+        src: "/creaties/kleding/queen-bee-top/images/queen-bee-2.jpeg",
+        alt: "Detail van de achterkant en striksluiting van de gebreide Queen bee top"
+      },
+      {
+        src: "/creaties/kleding/queen-bee-top/images/queen-bee-3.jpeg",
+        alt: "Queen bee top van ACA plat neergelegd, met de verschillende gebreide delen en strepen zichtbaar"
+      }
+    ]
+  }
 };
