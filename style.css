@@ -361,7 +361,7 @@ h3 {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 390px;
+  grid-template-columns: minmax(0, 1fr) 420px;
   align-items: stretch;
 
   margin: 0 auto;
@@ -373,7 +373,7 @@ h3 {
 .hero-copy {
   min-width: 0;
 
-  padding: clamp(32px, 4vw, 54px);
+  padding: clamp(28px, 3.5vw, 46px);
 
   display: flex;
   flex-direction: column;
@@ -412,7 +412,7 @@ h3 {
 }
 
 .hero-image {
-  width: 390px;
+  width: 420px;
   overflow: hidden;
   background: var(--warm-white);
 }
