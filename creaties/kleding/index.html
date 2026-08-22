@@ -5,60 +5,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kleding — ACA</title>
+  <!-- SEO -->
+  <title>Handgemaakte kleding | ACA — Annemeijne's Creatieve Atelier</title>
 
   <meta
     name="description"
-    content="Bekijk de handgemaakte gehaakte en gebreide kleding van ACA — Annemeijne's Creatieve Atelier."
+    content="Ontdek de handgemaakte kleding van ACA. Unieke gehaakte en gebreide kledingstukken, met aandacht bedacht en met de hand gemaakt."
   >
 
-  <link rel="stylesheet" href="../../style.css">
+  <!-- Social media / delen -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Handgemaakte kleding | ACA">
+  <meta
+    property="og:description"
+    content="Unieke gehaakte en gebreide kledingstukken van ACA, met de hand gemaakt en meestal maar één keer precies zo."
+  >
+  <meta property="og:url" content="https://acatelier.nl/creaties/kleding/">
+
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="../../style.css?v=9">
 </head>
 
 <body>
 
 <div id="site-header"></div>
-  
+
 <main>
 
-<section class="page-intro">
+  <section class="page-intro">
 
-  <p class="eyebrow">
-    Creaties · Kleding
-  </p>
+    <p class="eyebrow">
+      Creaties · Kleding
+    </p>
 
-  <h1 class="page-title">
-    Kleding
-  </h1>
+    <h1 class="page-title">
+      Kleding
+    </h1>
 
-  <p>
-    Gehaakte en gebreide kledingstukken, stuk voor stuk met de hand gemaakt.
-    Van ieder ontwerp is er meestal maar één exemplaar.
-  </p>
+    <p>
+      Gehaakte en gebreide kledingstukken, stuk voor stuk met de hand gemaakt.
+      Van ieder ontwerp is er meestal maar één exemplaar.
+    </p>
 
-</section>
+  </section>
 
-<section class="section">
 
-  <div class="product-toolbar">
+  <section class="section">
 
-    <label for="product-sort">
-      Sorteren
-    </label>
+    <div class="product-toolbar">
 
-    <select id="product-sort">
-      <option value="recommended">Aanbevolen</option>
-      <option value="newest">Nieuwste → oudste</option>
-      <option value="oldest">Oudste → nieuwste</option>
-      <option value="price-high">Hoogste → laagste prijs</option>
-      <option value="price-low">Laagste → hoogste prijs</option>
-    </select>
+      <label for="product-sort">
+        Sorteren
+      </label>
 
-  </div>
+      <select id="product-sort">
+        <option value="recommended">Aanbevolen</option>
+        <option value="newest">Nieuwste → oudste</option>
+        <option value="oldest">Oudste → nieuwste</option>
+        <option value="price-high">Hoogste → laagste prijs</option>
+        <option value="price-low">Laagste → hoogste prijs</option>
+      </select>
 
-  <div class="product-grid" id="product-grid"></div>
+    </div>
 
-</section>
+    <div class="product-grid" id="product-grid"></div>
+
+  </section>
 
 </main>
 
@@ -70,4 +83,5 @@
 <script src="/category.js"></script>
 
 </body>
+
 </html>
