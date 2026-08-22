@@ -1070,11 +1070,12 @@ footer {
 }
 
 .footer-logo {
-  width: 135px;
-
-  margin-bottom: 20px;
-
-  filter: brightness(0) invert(1);
+  width: 145px;
+  height: auto;
+  margin-bottom: 18px;
+  filter: none;
+  mix-blend-mode: normal;
+  background: transparent;
 }
 
 .footer-brand p {
