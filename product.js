@@ -183,8 +183,8 @@ function loadProduct() {
   const mainImage =
     document.getElementById("product-main-image");
 
-  mainImage.src = product.mainImage;
-  mainImage.alt = `${product.name} gedragen`;
+  mainImage.src = product.mainImage.src;
+  mainImage.alt = product.mainImage.alt;
 
   const detailsContainer =
     document.getElementById("product-details");
@@ -211,12 +211,12 @@ function loadProduct() {
 
   gallery.innerHTML = "";
 
-  product.images.forEach((image, index) => {
+  product.images.forEach((image) => {
     const figure = document.createElement("figure");
     const img = document.createElement("img");
 
-    img.src = image;
-    img.alt = `${product.name} — foto ${index + 1}`;
+    img.src = image.src;
+    img.alt = image.alt;
 
     figure.appendChild(img);
     gallery.appendChild(figure);
