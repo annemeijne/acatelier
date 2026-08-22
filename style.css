@@ -248,26 +248,26 @@ h3 {
 }
 
 .eyebrow {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 
   color: var(--stone);
 
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.35;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.13em;
 }
 
 .page-title {
-  font-size: clamp(48px, 5vw, 72px);
+  font-size: clamp(54px, 5.6vw, 80px);
   line-height: 0.96;
   letter-spacing: -0.04em;
 }
 
 .section-title {
-  font-size: clamp(42px, 4.6vw, 66px);
-  line-height: 0.98;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.96;
   letter-spacing: -0.04em;
 }
 
@@ -364,8 +364,8 @@ h3 {
 }
 
 .hero-copy h1 {
-  font-size: clamp(54px, 5.6vw, 86px);
-  line-height: 0.93;
+  font-size: clamp(58px, 6vw, 92px);
+  line-height: 0.91;
   letter-spacing: -0.05em;
 }
 
@@ -766,8 +766,8 @@ h3 {
 }
 
 .product-title {
-  font-size: clamp(48px, 5.4vw, 78px);
-  line-height: 0.96;
+  font-size: clamp(50px, 5.5vw, 82px);
+  line-height: 0.95;
   letter-spacing: -0.045em;
 }
 
@@ -812,11 +812,11 @@ h3 {
 
   color: var(--stone);
 
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.4;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.12em;
 }
 
 .product-meta strong {
