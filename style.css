@@ -1372,3 +1372,54 @@ footer {
   padding-top: 58px;
   padding-bottom: 58px;
 }
+
+/* ===== PRODUCT SORTERING ===== */
+
+.product-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.product-toolbar label {
+  color: var(--stone);
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.product-toolbar select {
+  min-width: 210px;
+  padding: 10px 34px 10px 12px;
+
+  border: 0;
+  border-bottom: 1px solid var(--warm-taupe);
+  background: transparent;
+
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.product-toolbar select:focus {
+  outline: none;
+  border-bottom-color: var(--terracotta);
+}
+
+@media (max-width: 650px) {
+  .product-toolbar {
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .product-toolbar select {
+    width: 100%;
+  }
+}
