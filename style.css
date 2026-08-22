@@ -1385,15 +1385,15 @@ footer {
 
 .product-toolbar label {
   color: var(--stone);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }
 
 .product-toolbar select {
-  min-width: 210px;
-  padding: 10px 34px 10px 12px;
+  min-width: 240px;
+  padding: 13px 38px 13px 15px;
 
   border: 0;
   border-bottom: 1px solid var(--warm-taupe);
@@ -1401,7 +1401,7 @@ footer {
 
   color: var(--charcoal);
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 13px;
 
   cursor: pointer;
 }
