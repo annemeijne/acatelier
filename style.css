@@ -355,15 +355,15 @@ h3 {
 
 .hero {
   max-width: var(--max-width);
+
   margin: 0 auto;
+
   padding: 24px 34px 22px;
 }
 
 .hero-grid {
-  height: 520px;
-
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 440px;
+  grid-template-columns: minmax(0, 1fr) 500px;
   align-items: stretch;
 
   margin: 0 auto;
@@ -414,14 +414,10 @@ h3 {
 }
 
 .hero-image {
-  width: 440px;
-  height: 520px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 500px;
 
   overflow: hidden;
+
   background: var(--warm-white);
 }
 
@@ -429,11 +425,11 @@ h3 {
   display: block;
 
   width: 100%;
-  height: 100%;
+  height: auto;
 
-  object-fit: contain;
-  object-position: center;
+  max-width: none;
 }
+
 
 /* =========================================
    ALGEMENE SECTIES
@@ -1480,11 +1476,11 @@ footer {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) 350px;
+    grid-template-columns: minmax(0, 1fr) 430px;
   }
 
   .hero-image {
-    width: 350px;
+    width: 430px;
   }
 }
 
@@ -1507,28 +1503,28 @@ footer {
     justify-self: start;
   }
 
-.hero-grid {
-  grid-template-columns: 1fr;
-}
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 
-.hero-copy {
-  border-right: 0;
-  border-bottom: 1px solid var(--warm-taupe);
-}
+  .hero-copy {
+    border-right: 0;
+    border-bottom: 1px solid var(--warm-taupe);
+  }
 
-.hero-image {
-  width: 100%;
-  padding: 24px;
+  .hero-image {
+    width: 100%;
+    padding: 24px;
 
-  display: flex;
-  justify-content: center;
-}
+    display: flex;
+    justify-content: center;
+  }
 
-.hero-image img {
-  width: min(390px, 100%);
-  height: auto;
-}
-  
+  .hero-image img {
+    width: min(500px, 100%);
+    height: auto;
+  }
+
   .about-grid,
   .contact-grid,
   .product-hero,
@@ -1705,18 +1701,18 @@ footer {
   }
 
   .hero-image {
-  width: 100%;
-  padding: 18px;
+    width: 100%;
+    padding: 18px;
 
-  display: flex;
-  justify-content: center;
-}
+    display: flex;
+    justify-content: center;
+  }
 
-.hero-image img {
-  width: min(340px, 100%);
-  height: auto;
-}
-  
+  .hero-image img {
+    width: min(380px, 100%);
+    height: auto;
+  }
+
   .page-intro {
     padding-top: 46px;
     padding-bottom: 18px;
