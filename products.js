@@ -176,5 +176,50 @@ const products = {
       alt: "Your favourite sweater van ACA gedragen in een ruime oversized pasvorm"
     }
   ]
+},
+
+  "sunny-granny-top": {
+  name: "Sunny granny top",
+  category: "Kleding",
+  categoryUrl: "/creaties/kleding/",
+
+  price: "",
+  availability: "Niet beschikbaar",
+
+  publishedDate: "2026-08-23",
+  priceValue: null,
+
+  lead:
+    "Een handgehaakte haltertop van granny squares in warme tinten roze, oranje, oker en crème. Gemaakt van gerecycled katoengaren en samengesteld uit een vooraf bedachte combinatie van kleuren.",
+
+  storyTitle: "Een van de eerste.",
+
+  story:
+    "De Sunny granny top maakte ik in 2024 en was een van mijn eerste echte haakprojecten. Ik werkte zonder patroon, maar bedacht vooraf wel hoe ik de verschillende kleuren over de granny squares wilde verdelen. Eerst ontstonden alle vierkantjes afzonderlijk, waarna ik ze samenvoegde tot de uiteindelijke top. Juist omdat dit een van mijn eerste grotere werkjes was, vind ik het nog steeds bijzonder om te zien hoe het ontwerp stukje voor stukje vorm kreeg.",
+
+  details: [
+    ["Materiaal", "Gerecycled katoengaren"],
+    ["Techniek", "Gehaakt · granny squares"],
+    ["Ontwerp", "Zonder patroon"],
+    ["Jaar", "2024"],
+    ["Exemplaar", "Uniek exemplaar"],
+    ["Beschikbaarheid", "Niet beschikbaar"]
+  ],
+
+  mainImage: {
+    src: "/creaties/kleding/sunny-granny-top/images/sunny-granny-top-01.jpg",
+    alt: "Handgehaakte Sunny granny top van ACA gedragen, gemaakt van kleurrijke granny squares"
+  },
+
+  images: [
+    {
+      src: "/creaties/kleding/sunny-granny-top/images/sunny-granny-top-02.jpg",
+      alt: "Sunny granny top tijdens het maken, opgebouwd uit granny squares in roze, oranje, oker en crème"
+    },
+    {
+      src: "/creaties/kleding/sunny-granny-top/images/sunny-granny-top-03.jpg",
+      alt: "Losse gehaakte granny squares voor de Sunny granny top tijdens het ontwerpproces"
+    }
+  ]
 }
 };
