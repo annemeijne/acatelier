@@ -1781,3 +1781,125 @@ footer {
     gap: 8px;
   }
 }
+
+/* =========================================
+   ACA — SIMPELE TYPOGRAFISCHE BASIS
+========================================= */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Kleine labels */
+
+.eyebrow,
+.meta-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* Algemene paginatitel */
+
+.page-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(38px, 3.6vw, 52px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* Sectietitels */
+
+.section-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 2.7vw, 38px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+/* Homepage hoofdtitel */
+
+.hero-copy h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(40px, 4vw, 54px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* Producttitel */
+
+.product-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 3.4vw, 48px);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+/* Over ACA verhalen */
+
+.about-story h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(27px, 2.4vw, 34px);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Gewone tekst */
+
+.page-intro p:not(.eyebrow),
+.hero-copy > p:not(.eyebrow),
+.about-profile-copy p:not(.eyebrow),
+.about-story p:not(.eyebrow),
+.section-head > p,
+.product-story p:last-child,
+.contact-text p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Minder overdreven witruimte */
+
+.page-intro {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.section {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+/* Mobiel */
+
+@media (max-width: 650px) {
+
+  .page-title {
+    font-size: 38px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .hero-copy h1 {
+    font-size: 40px;
+  }
+
+  .product-title {
+    font-size: 36px;
+  }
+
+  .about-story h2 {
+    font-size: 28px;
+  }
+}
