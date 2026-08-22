@@ -1364,3 +1364,10 @@ footer {
     gap: 8px;
   }
 }
+
+/* ===== HOMEPAGE: IMPERFECTIE ===== */
+
+.home-imperfect {
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
