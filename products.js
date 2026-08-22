@@ -97,40 +97,40 @@ const products = {
       "https://youtu.be/DIzU22ON_rg?si=jK1ip5QgKoHBd8gE",
 
     mainImage: {
-      src: "/creaties/kleding/unravel-sweater/images/unravel-a.jpeg",
-      alt: "Handgehaakte Unravel sweater van ACA in groen, blauw, lila en crème, gedragen van voren"
-    },
+  src: "/creaties/kleding/unravel-sweater/images/unravel-d.jpeg",
+  alt: "Handgehaakte Unravel sweater van ACA aan een hanger, vooraanzicht met lange mouwen en losse garenuiteinden"
+},
 
-    images: [
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-b.jpeg",
-        alt: "Unravel sweater gedragen, tweede aanzicht"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-c.jpeg",
-        alt: "Achterzijde van de handgehaakte Unravel sweater"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-d.jpeg",
-        alt: "Unravel sweater aan een hanger, voorzijde"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-e.jpeg",
-        alt: "Unravel sweater aan een hanger, achterzijde"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-f.jpeg",
-        alt: "Detail van de hals en het haakwerk van de Unravel sweater"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-g.jpeg",
-        alt: "Detail van de mouw en constructie van de Unravel sweater"
-      },
-      {
-        src: "/creaties/kleding/unravel-sweater/images/unravel-h.jpeg",
-        alt: "Detail van het haakwerk en de zichtbare losse draden van de Unravel sweater"
-      }
-    ]
+images: [
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-e.jpeg",
+    alt: "Achteraanzicht van de handgehaakte Unravel sweater aan een hanger in crème, groen, blauw en lila"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-f.jpeg",
+    alt: "Detail van de hals en gekleurde haaksteken van de Unravel sweater"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-g.jpeg",
+    alt: "Detail van de gehaakte verbinding tussen mouw en lijf van de Unravel sweater"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-h.jpeg",
+    alt: "Close-up van de verschillende kleuren en haaksteken van de Unravel sweater"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-a.jpeg",
+    alt: "Annemeijne draagt de handgehaakte Unravel sweater met lange mouwen en losse garenuiteinden"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-b.jpeg",
+    alt: "Vooraanzicht van de gedragen Unravel sweater in crème, groen, blauw en lila"
+  },
+  {
+    src: "/creaties/kleding/unravel-sweater/images/unravel-c.jpeg",
+    alt: "Achter- en zijaanzicht van de gedragen handgehaakte Unravel sweater"
+  }
+]
   }
 
 };
