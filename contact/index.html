@@ -76,57 +76,83 @@
       </div>
 
 
-      <form class="contact-form">
+<form
+  class="contact-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+>
 
-        <label>
-          Naam
-          <input
-            type="text"
-            name="name"
-            autocomplete="name"
-            required
-          >
-        </label>
+  <input
+    type="hidden"
+    name="access_key"
+    value="HIER_JOUW_ACCESS_KEY"
+  >
 
-        <label>
-          E-mailadres
-          <input
-            type="email"
-            name="email"
-            autocomplete="email"
-            required
-          >
-        </label>
+  <input
+    type="hidden"
+    name="subject"
+    value="Nieuw bericht via ACA"
+  >
 
-        <label>
-          Onderwerp
-          <input
-            type="text"
-            name="subject"
-          >
-        </label>
+  <input
+    type="hidden"
+    name="from_name"
+    value="ACA contactformulier"
+  >
 
-        <label>
-          Bericht
-          <textarea
-            name="message"
-            required
-          ></textarea>
-        </label>
+  <input
+    type="checkbox"
+    name="botcheck"
+    class="hidden"
+    style="display:none"
+    tabindex="-1"
+    autocomplete="off"
+  >
 
-        <button
-          class="button"
-          type="submit"
-        >
-          Verstuur bericht
-        </button>
+  <label>
+    Naam
+    <input
+      type="text"
+      name="name"
+      autocomplete="name"
+      required
+    >
+  </label>
 
-        <p class="contact-form-note">
-          Het contactformulier wordt binnenkort geactiveerd.
-          Tot die tijd kun je me rechtstreeks mailen.
-        </p>
+  <label>
+    E-mailadres
+    <input
+      type="email"
+      name="email"
+      autocomplete="email"
+      required
+    >
+  </label>
 
-      </form>
+  <label>
+    Onderwerp
+    <input
+      type="text"
+      name="onderwerp"
+    >
+  </label>
+
+  <label>
+    Bericht
+    <textarea
+      name="message"
+      required
+    ></textarea>
+  </label>
+
+  <button
+    class="button"
+    type="submit"
+  >
+    Verstuur bericht
+  </button>
+
+</form>
 
     </div>
 
