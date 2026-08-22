@@ -1636,3 +1636,210 @@ body {
     font-size: clamp(38px, 11vw, 50px);
   }
 }
+
+/* =========================================
+   OVER ACA — NIEUWE LAYOUT
+========================================= */
+
+.about-page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 34px 90px;
+}
+
+
+/* Intro */
+
+.about-intro {
+  max-width: 1050px;
+  padding: 58px 0 68px;
+}
+
+.about-intro .page-title {
+  max-width: 900px;
+}
+
+.about-intro .intro-text {
+  max-width: 650px;
+  margin: 24px 0 0;
+
+  color: var(--stone);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* Persoonlijke introductie */
+
+.about-profile {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: clamp(45px, 7vw, 100px);
+  align-items: center;
+
+  padding: 26px 0 80px;
+}
+
+.about-profile-image {
+  aspect-ratio: 4 / 5;
+
+  background: var(--warm-white);
+}
+
+.about-profile-copy {
+  max-width: 620px;
+}
+
+.about-profile-copy .section-title {
+  margin-bottom: 22px;
+}
+
+.about-profile-copy p:not(.eyebrow) {
+  margin: 0 0 18px;
+
+  color: var(--stone);
+
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+
+/* Verhalenraster */
+
+.about-stories {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 18px;
+
+  padding-top: 20px;
+}
+
+.about-story {
+  padding: clamp(28px, 4vw, 48px);
+
+  border: 1px solid var(--warm-taupe);
+
+  background: rgba(255, 253, 251, 0.45);
+}
+
+.about-story h2 {
+  margin-bottom: 20px;
+
+  font-family: var(--serif);
+  font-size: clamp(30px, 2.8vw, 42px);
+  line-height: 1.07;
+  letter-spacing: -0.025em;
+}
+
+.about-story p:not(.eyebrow) {
+  max-width: 560px;
+
+  margin: 0;
+
+  color: var(--stone);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* Verschillende formaten geven dynamiek */
+
+.about-story.wide {
+  grid-column: span 7;
+}
+
+.about-story.narrow {
+  grid-column: span 5;
+}
+
+.about-story.full {
+  grid-column: 2 / span 10;
+}
+
+.about-story.soft {
+  background: var(--soft-linen);
+  border-color: var(--soft-linen);
+}
+
+
+/* Afsluiting */
+
+.about-closing {
+  max-width: 620px;
+
+  margin: 80px auto 10px;
+
+  text-align: center;
+}
+
+.about-closing p {
+  margin: 0 0 18px;
+
+  color: var(--stone);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-closing .signoff {
+  color: var(--charcoal);
+
+  font-family: var(--serif);
+  font-size: 28px;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+  .about-profile {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile-image {
+    max-width: 600px;
+  }
+
+  .about-story.wide,
+  .about-story.narrow,
+  .about-story.full {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* Mobiel */
+
+@media (max-width: 650px) {
+
+  .about-page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .about-intro {
+    padding-top: 44px;
+    padding-bottom: 50px;
+  }
+
+  .about-profile {
+    padding-bottom: 55px;
+  }
+
+  .about-story {
+    padding: 26px 22px;
+  }
+
+  .about-story h2 {
+    font-size: 32px;
+  }
+
+  .about-closing {
+    margin-top: 55px;
+  }
+}
