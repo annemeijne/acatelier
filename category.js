@@ -48,8 +48,81 @@ function createProductCard(slug, product) {
   return card;
 }
 
-function loadCategoryProducts() {
+function getNumericPrice(product) {
+  if (typeof product.priceValue === "number") {
+    return product.priceValue;
+  }
+
+  return null;
+}
+
+function getProductDate(product) {
+  if (product.date) {
+    return new Date(product.date).getTime();
+  }
+
+  return 0;
+}
+
+function sortProducts(productsList, sortValue) {
+  const sorted = [...productsList];
+
+  switch (sortValue) {
+    case "newest":
+      return sorted.sort(
+        ([, a], [, b]) => getProductDate(b) - getProductDate(a)
+      );
+
+    case "oldest":
+      return sorted.sort(
+        ([, a], [, b]) => getProductDate(a) - getProductDate(b)
+      );
+
+    case "price-high":
+      return sorted.sort(([, a], [, b]) => {
+        const priceA = getNumericPrice(a);
+        const priceB = getNumericPrice(b);
+
+        if (priceA === null && priceB === null) return 0;
+        if (priceA === null) return 1;
+        if (priceB === null) return -1;
+
+        return priceB - priceA;
+      });
+
+    case "price-low":
+      return sorted.sort(([, a], [, b]) => {
+        const priceA = getNumericPrice(a);
+        const priceB = getNumericPrice(b);
+
+        if (priceA === null && priceB === null) return 0;
+        if (priceA === null) return 1;
+        if (priceB === null) return -1;
+
+        return priceA - priceB;
+      });
+
+    case "recommended":
+    default:
+      return sorted.sort(([, a], [, b]) => {
+        const orderA =
+          typeof a.recommendedOrder === "number"
+            ? a.recommendedOrder
+            : 999;
+
+        const orderB =
+          typeof b.recommendedOrder === "number"
+            ? b.recommendedOrder
+            : 999;
+
+        return orderA - orderB;
+      });
+  }
+}
+
+function renderProducts() {
   const grid = document.getElementById("product-grid");
+  const sortSelect = document.getElementById("product-sort");
 
   if (!grid) {
     return;
@@ -61,18 +134,37 @@ function loadCategoryProducts() {
     return;
   }
 
+  let categoryProducts = Object.entries(products).filter(
+    ([, product]) => product.category === category
+  );
+
+  const sortValue = sortSelect
+    ? sortSelect.value
+    : "recommended";
+
+  categoryProducts = sortProducts(
+    categoryProducts,
+    sortValue
+  );
+
   grid.innerHTML = "";
 
-  Object.entries(products)
-    .filter(([, product]) => product.category === category)
-    .forEach(([slug, product]) => {
-      grid.appendChild(
-        createProductCard(slug, product)
-      );
-    });
+  categoryProducts.forEach(([slug, product]) => {
+    grid.appendChild(
+      createProductCard(slug, product)
+    );
+  });
 }
 
-document.addEventListener(
-  "DOMContentLoaded",
-  loadCategoryProducts
-);
+document.addEventListener("DOMContentLoaded", () => {
+  renderProducts();
+
+  const sortSelect = document.getElementById("product-sort");
+
+  if (sortSelect) {
+    sortSelect.addEventListener(
+      "change",
+      renderProducts
+    );
+  }
+});
