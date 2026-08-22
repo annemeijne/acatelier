@@ -123,10 +123,6 @@ const products = {
       alt: "Annemeijne draagt de handgehaakte Unravel sweater met lange mouwen en losse garenuiteinden"
     },
     {
-      src: "/creaties/kleding/unravel-sweater/images/unravel-b.jpeg",
-      alt: "Vooraanzicht van de gedragen Unravel sweater in crème, groen, blauw en lila"
-    },
-    {
       src: "/creaties/kleding/unravel-sweater/images/unravel-c.jpeg",
       alt: "Achter- en zijaanzicht van de gedragen handgehaakte Unravel sweater"
     }
