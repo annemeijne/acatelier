@@ -253,17 +253,17 @@ const products = {
     ],
 
     mainImage: {
-      src: "/creaties/kleding/queen-bee-top/images/queen-bee-1.jpeg",
+      src: "/creaties/kleding/queen-bee-top/images/queen-bee-1.png",
       alt: "Oranje gebreide Queen bee top van ACA gedragen, met donkerblauwe en witte strepen"
     },
 
     images: [
       {
-        src: "/creaties/kleding/queen-bee-top/images/queen-bee-2.jpeg",
+        src: "/creaties/kleding/queen-bee-top/images/queen-bee-2.png",
         alt: "Detail van de achterkant en striksluiting van de gebreide Queen bee top"
       },
       {
-        src: "/creaties/kleding/queen-bee-top/images/queen-bee-3.jpeg",
+        src: "/creaties/kleding/queen-bee-top/images/queen-bee-3.png",
         alt: "Queen bee top van ACA plat neergelegd, met de verschillende gebreide delen en strepen zichtbaar"
       }
     ]
