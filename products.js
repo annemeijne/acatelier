@@ -129,4 +129,60 @@ const products = {
   ]
 }
 
+  "your-favourite-sweater": {
+  name: "Your favourite sweater",
+  category: "Kleding",
+  categoryUrl: "/creaties/kleding/",
+
+  price: "Prijs volgt",
+  availability: "Uniek exemplaar",
+
+  publishedDate: "2026-08-23",
+  priceValue: null,
+
+  lead:
+    "Een ruime, handgehaakte sweater in zacht crème. De open structuur wordt gecombineerd met ribsteken bij de hals, mouwen en onderkant, waardoor de sweater ruim valt maar op die plekken net wat meer vorm krijgt.",
+
+  storyTitle: "Groot, zacht en precies zoals ik hem wilde.",
+
+  story:
+    "Ik wilde een lekker grote sweater maken: ruim, comfortabel en makkelijk om overal overheen te dragen. Tijdens het maken wilde ik vooral experimenteren met een ribsteek bij de hals. Uiteindelijk heb ik diezelfde techniek ook gebruikt bij de mouwen en onderkant van de sweater. Deze ribsteken zijn net iets strakker dan de rest van het haakwerk, waardoor de sweater daar vanzelf wat naar binnen valt. Zoals veel van mijn creaties maakte ik deze sweater zonder patroon. Ik ben gewoon begonnen en heb gaandeweg gekeken wat werkte — een beetje proberen, uithalen, aanpassen en weer verder haken.",
+
+  details: [
+    ["Materiaal", "Acrylgaren"],
+    ["Techniek", "Gehaakt, met ribsteek bij hals, mouwen en onderkant"],
+    ["Ontwerp", "Zonder patroon, zelf bedacht door trial and error"],
+    ["Pasvorm", "Ruime, oversized pasvorm — op de foto's gedragen door iemand van 167 cm"],
+    ["Jaar", "2026"],
+    ["Beschikbaarheid", "Uniek exemplaar"]
+  ],
+
+  mainImage: {
+    src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-1.jpeg",
+    alt: "Ruime crèmekleurige handgehaakte Your favourite sweater van ACA, gedragen met beige broek"
+  },
+
+  images: [
+    {
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-3.jpeg",
+      alt: "Crèmekleurige handgehaakte Your favourite sweater van ACA volledig zichtbaar aan een witte hanger"
+    },
+    {
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-4.jpeg",
+      alt: "Detail van de gehaakte hals en ribsteek van de Your favourite sweater"
+    },
+    {
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-5.jpeg",
+      alt: "Detail van de ribsteek aan de onderkant van de Your favourite sweater"
+    },
+    {
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-6.jpeg",
+      alt: "Detail van de ribsteek en haakstructuur van de mouw van de Your favourite sweater"
+    },
+    {
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-2.jpeg",
+      alt: "Your favourite sweater van ACA gedragen in een ruime oversized pasvorm"
+    }
+  ]
+}
 };
