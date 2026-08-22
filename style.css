@@ -130,7 +130,7 @@ h3 {
 
   overflow: visible;
 
-  background: rgba(250, 247, 242, 0.96);
+  background: rgba(237, 232, 224, 0.96);
   backdrop-filter: blur(14px);
 
   border-bottom: 1px solid rgba(201, 189, 177, 0.72);
@@ -138,7 +138,7 @@ h3 {
 
 .nav {
   max-width: var(--max-width);
-  height: 126px;
+  height: 108px;
 
   margin: auto;
   padding: 0 34px;
