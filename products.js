@@ -150,29 +150,29 @@ const products = {
   ],
 
   mainImage: {
-    src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-1.jpeg",
+    src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-1.png",
     alt: "Ruime crèmekleurige handgehaakte Your favourite sweater van ACA, gedragen met beige broek"
   },
 
   images: [
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-3.jpeg",
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-3.png",
       alt: "Crèmekleurige handgehaakte Your favourite sweater van ACA volledig zichtbaar aan een witte hanger"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-4.jpeg",
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-4.png",
       alt: "Detail van de gehaakte hals en ribsteek van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-5.jpeg",
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-5.png",
       alt: "Detail van de ribsteek aan de onderkant van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-6.jpeg",
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-6.png",
       alt: "Detail van de ribsteek en haakstructuur van de mouw van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-2.jpeg",
+      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-2.png",
       alt: "Your favourite sweater van ACA gedragen in een ruime oversized pasvorm"
     }
   ]
