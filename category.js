@@ -22,8 +22,8 @@ function createProductCard(slug, product) {
   card.href = `/product.html?product=${slug}`;
 
   const image = document.createElement("img");
-  image.src = product.mainImage;
-  image.alt = product.name;
+  image.src = product.mainImage.src;
+  image.alt = product.mainImage.alt;
 
   const info = document.createElement("div");
   info.className = "product-info";
@@ -103,18 +103,18 @@ function sortProducts(productsList, sortValue, category) {
       });
 
     case "recommended":
-default:
-  return sorted.sort(([slugA], [slugB]) => {
-    const order = recommendedOrder[category] || [];
+    default:
+      return sorted.sort(([slugA], [slugB]) => {
+        const order = recommendedOrder[category] || [];
 
-    const indexA = order.indexOf(slugA);
-    const indexB = order.indexOf(slugB);
+        const indexA = order.indexOf(slugA);
+        const indexB = order.indexOf(slugB);
 
-    const safeA = indexA === -1 ? 999 : indexA;
-    const safeB = indexB === -1 ? 999 : indexB;
+        const safeA = indexA === -1 ? 999 : indexA;
+        const safeB = indexB === -1 ? 999 : indexB;
 
-    return safeA - safeB;
-  });
+        return safeA - safeB;
+      });
   }
 }
 
@@ -140,11 +140,11 @@ function renderProducts() {
     ? sortSelect.value
     : "recommended";
 
- categoryProducts = sortProducts(
-  categoryProducts,
-  sortValue,
-  category
-);
+  categoryProducts = sortProducts(
+    categoryProducts,
+    sortValue,
+    category
+  );
 
   grid.innerHTML = "";
 
