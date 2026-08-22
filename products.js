@@ -127,7 +127,7 @@ const products = {
       alt: "Achter- en zijaanzicht van de gedragen handgehaakte Unravel sweater"
     }
   ]
-}
+},
 
   "your-favourite-sweater": {
   name: "Your favourite sweater",
