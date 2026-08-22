@@ -244,7 +244,6 @@ h3 {
   z-index: 100;
 
   min-width: 220px;
-
   padding: 12px;
 
   background: var(--warm-white);
@@ -359,11 +358,11 @@ h3 {
 
   margin: auto;
 
-  padding: 24px 34px 24px;
+  padding: 24px 34px 22px;
 }
 
 .hero-grid {
-  height: 450px;
+  height: 460px;
   min-height: 0;
 
   display: grid;
@@ -413,24 +412,31 @@ h3 {
 
 .hero-image {
   width: 100%;
-  height: 450px;
-  min-height: 0;
+  height: 460px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   overflow: hidden;
+
+  background: var(--warm-white);
 }
 
 .hero-image a {
-  display: block;
-
   width: 100%;
   height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image img {
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
@@ -446,8 +452,6 @@ h3 {
 
   padding: 42px 34px;
 }
-
-/* Eerste sectie na de hero bewust dichterbij */
 
 .hero + .section {
   padding-top: 24px;
@@ -1513,7 +1517,7 @@ footer {
   }
 
   .hero-image {
-    height: 480px;
+    height: 460px;
   }
 
   .about-grid,
@@ -1692,7 +1696,10 @@ footer {
   }
 
   .hero-image img {
-    min-height: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
   }
 
   .page-intro {
