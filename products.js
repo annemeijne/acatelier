@@ -35,14 +35,6 @@ const products = {
 
     images: [
       {
-        src: "/creaties/kleding/belmont-top/images/Belmont%20top%20-%20a.png",
-        alt: "Belmont top gedragen, schuin van voren"
-      },
-      {
-        src: "/creaties/kleding/belmont-top/images/Belmont%20top%20-%20b.png",
-        alt: "Belmont top gedragen van opzij"
-      },
-      {
         src: "/creaties/kleding/belmont-top/images/Belmont%20top%20-%20f.png",
         alt: "Handgehaakte Belmont top aan een hanger, voorzijde"
       },
