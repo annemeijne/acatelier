@@ -354,7 +354,7 @@ h3 {
 ========================================= */
 
 .hero {
-  max-width: 1260px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 24px 34px 22px;
 }
@@ -1471,7 +1471,6 @@ footer {
   }
 
   .hero-grid {
-    max-width: 1050px;
     grid-template-columns: minmax(0, 1fr) 350px;
   }
 
