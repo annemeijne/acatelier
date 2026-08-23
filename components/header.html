@@ -28,12 +28,18 @@
 
     </div>
 
-    <a class="brand" href="/" aria-label="ACA — naar de homepage">
+
+    <a
+      class="brand"
+      href="/"
+      aria-label="ACA — naar de homepage"
+    >
       <img
         src="/aca-logo.png"
-        alt="ACA: Annemeijne's Creatieve Atelier"
+        alt="ACA — Annemeijne's Creatieve Atelier"
       >
     </a>
+
 
     <div class="nav-right">
 
@@ -41,12 +47,96 @@
         Contact
       </a>
 
-      <a class="cart-button" href="#">
+      <a
+        class="cart-button"
+        href="#"
+        aria-label="Winkelmandje, 0 artikelen"
+      >
         Winkelmandje · 0
       </a>
+
+      <button
+        class="mobile-menu-button"
+        id="mobile-menu-button"
+        type="button"
+        aria-label="Menu openen"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
 
     </div>
 
   </nav>
+
+
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    hidden
+  >
+
+    <nav
+      class="mobile-nav"
+      aria-label="Mobiele navigatie"
+    >
+
+      <div class="mobile-nav-group">
+
+        <a
+          class="mobile-nav-main"
+          href="/creaties/"
+        >
+          Creaties
+        </a>
+
+        <div class="mobile-nav-sub">
+
+          <a href="/creaties/kleding/">
+            Kleding
+          </a>
+
+          <a href="/creaties/tierlantijnen/">
+            Tierlantijnen
+          </a>
+
+          <a href="/creaties/geschreven/">
+            Geschreven
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a
+        class="mobile-nav-main"
+        href="/over-aca/"
+      >
+        Over ACA
+      </a>
+
+
+      <a
+        class="mobile-nav-main"
+        href="/faq/"
+      >
+        FAQ
+      </a>
+
+
+      <a
+        class="mobile-nav-main"
+        href="/contact/"
+      >
+        Contact
+      </a>
+
+    </nav>
+
+  </div>
 
 </header>
