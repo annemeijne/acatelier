@@ -1,7 +1,11 @@
 function getProductSlug() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get("product");
+  const pathParts = window.location.pathname
+    .split("/")
+    .filter(Boolean);
+
+  return pathParts[pathParts.length - 1] || null;
 }
+
 
 function createDetail(label, value, link = null) {
   const wrapper = document.createElement("div");
@@ -14,10 +18,12 @@ function createDetail(label, value, link = null) {
 
   if (link) {
     const anchor = document.createElement("a");
+
     anchor.href = link;
     anchor.target = "_blank";
     anchor.rel = "noopener noreferrer";
     anchor.textContent = value;
+
     valueEl.appendChild(anchor);
   } else {
     valueEl.textContent = value;
@@ -29,6 +35,7 @@ function createDetail(label, value, link = null) {
   return wrapper;
 }
 
+
 function setupLightbox() {
   const galleryImages = Array.from(
     document.querySelectorAll(
@@ -36,13 +43,23 @@ function setupLightbox() {
     )
   );
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightbox-image");
-  const closeButton = document.getElementById("lightbox-close");
-  const prevButton = document.getElementById("lightbox-prev");
-  const nextButton = document.getElementById("lightbox-next");
+  const lightbox =
+    document.getElementById("lightbox");
+
+  const lightboxImage =
+    document.getElementById("lightbox-image");
+
+  const closeButton =
+    document.getElementById("lightbox-close");
+
+  const prevButton =
+    document.getElementById("lightbox-prev");
+
+  const nextButton =
+    document.getElementById("lightbox-next");
 
   if (
+    !galleryImages.length ||
     !lightbox ||
     !lightboxImage ||
     !closeButton ||
@@ -53,183 +70,448 @@ function setupLightbox() {
   }
 
   let currentImage = 0;
+  let previouslyFocusedElement = null;
+
 
   function showImage(index) {
     currentImage =
-      (index + galleryImages.length) % galleryImages.length;
+      (index + galleryImages.length)
+      % galleryImages.length;
 
-    lightboxImage.src = galleryImages[currentImage].src;
-    lightboxImage.alt = galleryImages[currentImage].alt;
+    lightboxImage.src =
+      galleryImages[currentImage].src;
+
+    lightboxImage.alt =
+      galleryImages[currentImage].alt;
   }
+
 
   function openLightbox(index) {
+    previouslyFocusedElement =
+      document.activeElement;
+
     showImage(index);
+
     lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+    document.body.classList.add(
+      "lightbox-open"
+    );
+
+    closeButton.focus();
   }
+
 
   function closeLightbox() {
     lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    document.body.classList.remove(
+      "lightbox-open"
+    );
+
+    lightboxImage.src = "";
+    lightboxImage.alt = "";
+
+    if (previouslyFocusedElement) {
+      previouslyFocusedElement.focus();
+    }
   }
 
+
   galleryImages.forEach((image, index) => {
-    image.addEventListener("click", () => openLightbox(index));
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+
+    image.setAttribute(
+      "aria-label",
+      `${image.alt} — vergroot foto`
+    );
+
+    image.addEventListener(
+      "click",
+      () => openLightbox(index)
+    );
+
+    image.addEventListener(
+      "keydown",
+      (event) => {
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+          event.preventDefault();
+
+          openLightbox(index);
+        }
+      }
+    );
   });
 
-  closeButton.addEventListener("click", closeLightbox);
 
-  prevButton.addEventListener("click", () => {
-    showImage(currentImage - 1);
-  });
+  closeButton.addEventListener(
+    "click",
+    closeLightbox
+  );
 
-  nextButton.addEventListener("click", () => {
-    showImage(currentImage + 1);
-  });
 
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!lightbox.classList.contains("open")) {
-      return;
-    }
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowLeft") {
+  prevButton.addEventListener(
+    "click",
+    () => {
       showImage(currentImage - 1);
     }
+  );
 
-    if (event.key === "ArrowRight") {
+
+  nextButton.addEventListener(
+    "click",
+    () => {
       showImage(currentImage + 1);
     }
-  });
+  );
+
+
+  lightbox.addEventListener(
+    "click",
+    (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    }
+  );
+
+
+  document.addEventListener(
+    "keydown",
+    (event) => {
+      if (
+        !lightbox.classList.contains("open")
+      ) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+      if (event.key === "ArrowLeft") {
+        showImage(currentImage - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        showImage(currentImage + 1);
+      }
+    }
+  );
 }
+
 
 function loadProduct() {
   const slug = getProductSlug();
   const product = products[slug];
 
+  const productPage =
+    document.querySelector(".product-page");
+
+  if (!productPage) {
+    return;
+  }
+
+
   if (!product) {
-    document.querySelector(".product-page").innerHTML = `
+    productPage.innerHTML = `
       <section class="page-intro">
-        <p class="eyebrow">Niet gevonden</p>
-        <h1 class="page-title">Deze creatie bestaat niet.</h1>
-        <p>
-          Misschien is de link niet meer geldig of is deze creatie verplaatst.
+        <p class="eyebrow">
+          Niet gevonden
         </p>
-        <a class="button secondary" href="/creaties/">
+
+        <h1 class="page-title">
+          Deze creatie bestaat niet.
+        </h1>
+
+        <p>
+          Misschien is de link niet meer geldig
+          of is deze creatie verplaatst.
+        </p>
+
+        <a
+          class="button secondary"
+          href="/creaties/"
+        >
           Terug naar creaties
         </a>
       </section>
     `;
+
     return;
   }
 
-  document.title = `${product.name} — ACA`;
 
-  const description = document.getElementById("page-description");
+  document.title =
+    `${product.name} | ACA — Annemeijne's Creatieve Atelier`;
+
+
+  const description =
+    document.getElementById("page-description");
+
   if (description) {
     description.content =
-      `${product.name} van ACA — unieke handgemaakte creatie.`;
+      product.lead;
   }
 
-  document.getElementById("breadcrumb-product").textContent =
-    product.name;
+
+  const canonical =
+    document.getElementById("canonical-url");
+
+  if (canonical) {
+    canonical.href =
+      window.location.origin +
+      window.location.pathname;
+  }
+
+
+  const ogTitle =
+    document.getElementById("og-title");
+
+  if (ogTitle) {
+    ogTitle.content =
+      `${product.name} | ACA`;
+  }
+
+
+  const ogDescription =
+    document.getElementById("og-description");
+
+  if (ogDescription) {
+    ogDescription.content =
+      product.lead;
+  }
+
+
+  const ogUrl =
+    document.getElementById("og-url");
+
+  if (ogUrl) {
+    ogUrl.content =
+      window.location.href;
+  }
+
+
+  const ogImage =
+    document.getElementById("og-image");
+
+  if (ogImage) {
+    ogImage.content =
+      window.location.origin +
+      product.mainImage.src;
+  }
+
+
+  document
+    .getElementById("breadcrumb-product")
+    .textContent =
+      product.name;
+
 
   const categoryLink =
-    document.getElementById("breadcrumb-category");
+    document.getElementById(
+      "breadcrumb-category"
+    );
 
-  categoryLink.textContent = product.category;
-  categoryLink.href = product.categoryUrl;
+  categoryLink.textContent =
+    product.category;
 
-  document.getElementById("product-name").textContent =
-    product.name;
+  categoryLink.href =
+    product.categoryUrl;
 
-  document.getElementById("product-lead").textContent =
-    product.lead;
 
-  document.getElementById("product-price").textContent =
-    product.price;
+  document
+    .getElementById("product-name")
+    .textContent =
+      product.name;
 
-  document.getElementById("product-availability").textContent =
-    product.availability;
 
-  document.getElementById("product-story-title").textContent =
-    product.storyTitle;
+  document
+    .getElementById("product-lead")
+    .textContent =
+      product.lead;
 
-  const story = document.getElementById("product-story");
-  story.textContent = product.story;
 
-  if (product.inspirationUrl && product.inspirationText) {
-    story.appendChild(document.createElement("br"));
-    story.appendChild(document.createElement("br"));
+  const price =
+    document.getElementById(
+      "product-price"
+    );
 
-    const inspirationLink = document.createElement("a");
-    inspirationLink.href = product.inspirationUrl;
-    inspirationLink.target = "_blank";
-    inspirationLink.rel = "noopener noreferrer";
-    inspirationLink.textContent = product.inspirationText;
+  price.textContent =
+    product.price || "Niet te koop";
 
-    story.appendChild(inspirationLink);
+
+  document
+    .getElementById(
+      "product-availability"
+    )
+    .textContent =
+      product.availability;
+
+
+  document
+    .getElementById(
+      "product-story-title"
+    )
+    .textContent =
+      product.storyTitle;
+
+
+  const story =
+    document.getElementById(
+      "product-story"
+    );
+
+  story.textContent =
+    product.story;
+
+
+  if (
+    product.inspirationUrl &&
+    product.inspirationText
+  ) {
+    story.appendChild(
+      document.createElement("br")
+    );
+
+    story.appendChild(
+      document.createElement("br")
+    );
+
+    const inspirationLink =
+      document.createElement("a");
+
+    inspirationLink.href =
+      product.inspirationUrl;
+
+    inspirationLink.target =
+      "_blank";
+
+    inspirationLink.rel =
+      "noopener noreferrer";
+
+    inspirationLink.textContent =
+      product.inspirationText;
+
+    story.appendChild(
+      inspirationLink
+    );
   }
 
-  const mainImage =
-    document.getElementById("product-main-image");
 
-  mainImage.src = product.mainImage.src;
-  mainImage.alt = product.mainImage.alt;
+  const mainImage =
+    document.getElementById(
+      "product-main-image"
+    );
+
+  mainImage.src =
+    product.mainImage.src;
+
+  mainImage.alt =
+    product.mainImage.alt;
+
+  mainImage.fetchPriority =
+    "high";
+
 
   const detailsContainer =
-    document.getElementById("product-details");
-
-  detailsContainer.innerHTML = "";
-
-  product.details.forEach(([label, value]) => {
-    let link = null;
-
-    if (
-      label === "Gebaseerd op" &&
-      product.inspirationUrl
-    ) {
-      link = product.inspirationUrl;
-    }
-
-    detailsContainer.appendChild(
-      createDetail(label, value, link)
+    document.getElementById(
+      "product-details"
     );
-  });
+
+  detailsContainer.innerHTML =
+    "";
+
+
+  product.details.forEach(
+    ([label, value]) => {
+      let link = null;
+
+      if (
+        label === "Gebaseerd op" &&
+        product.inspirationUrl
+      ) {
+        link =
+          product.inspirationUrl;
+      }
+
+      detailsContainer.appendChild(
+        createDetail(
+          label,
+          value,
+          link
+        )
+      );
+    }
+  );
+
 
   const gallery =
-    document.getElementById("product-gallery");
+    document.getElementById(
+      "product-gallery"
+    );
 
-  gallery.innerHTML = "";
+  gallery.innerHTML =
+    "";
 
-  product.images.forEach((image) => {
-    const figure = document.createElement("figure");
-    const img = document.createElement("img");
 
-    img.src = image.src;
-    img.alt = image.alt;
+  product.images.forEach(
+    (image) => {
+      const figure =
+        document.createElement("figure");
 
-    figure.appendChild(img);
-    gallery.appendChild(figure);
-  });
+      const img =
+        document.createElement("img");
+
+      img.src =
+        image.src;
+
+      img.alt =
+        image.alt;
+
+      img.loading =
+        "lazy";
+
+      figure.appendChild(img);
+
+      gallery.appendChild(
+        figure
+      );
+    }
+  );
+
 
   const backButton =
-    document.getElementById("product-back");
+    document.getElementById(
+      "product-back"
+    );
 
-  backButton.href = product.categoryUrl;
+  backButton.href =
+    product.categoryUrl;
+
   backButton.textContent =
     `← Terug naar ${product.category.toLowerCase()}`;
+
 
   setupLightbox();
 }
 
-document.addEventListener("DOMContentLoaded", loadProduct);
+
+document.addEventListener(
+  "DOMContentLoaded",
+  loadProduct
+);
