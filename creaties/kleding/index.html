@@ -13,6 +13,11 @@
     content="Ontdek de handgemaakte kleding van ACA uit Nijmegen: unieke gehaakte en gebreide tops, truien en andere kledingstukken, meestal maar één keer precies zo."
   >
 
+  <link
+    rel="canonical"
+    href="https://acatelier.nl/creaties/kleding/"
+  >
+
   <!-- Social media / delen -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Gehaakte & handgemaakte kleding | ACA">
@@ -24,7 +29,12 @@
 
   <meta name="twitter:card" content="summary">
 
-  <link rel="stylesheet" href="../../style.css?v=9">
+  <link rel="stylesheet" href="/style.css?v=9">
+
+  <script src="/components.js" defer></script>
+  <script src="/products.js" defer></script>
+  <script src="/recommended-order.js" defer></script>
+  <script src="/category.js" defer></script>
 </head>
 
 <body>
@@ -62,7 +72,10 @@
         Sorteren
       </label>
 
-      <select id="product-sort">
+      <select
+        id="product-sort"
+        name="product-sort"
+      >
         <option value="recommended">Aanbevolen</option>
         <option value="newest">Nieuwste → oudste</option>
         <option value="oldest">Oudste → nieuwste</option>
@@ -72,18 +85,17 @@
 
     </div>
 
-    <div class="product-grid" id="product-grid"></div>
+    <div
+      class="product-grid"
+      id="product-grid"
+      aria-live="polite"
+    ></div>
 
   </section>
 
 </main>
 
 <div id="site-footer"></div>
-
-<script src="/components.js"></script>
-<script src="/products.js"></script>
-<script src="/recommended-order.js"></script>
-<script src="/category.js"></script>
 
 </body>
 
