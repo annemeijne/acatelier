@@ -45,7 +45,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-body.lightbox-open {
+body.lightbox-open,
+body.mobile-menu-open {
   overflow: hidden;
 }
 
@@ -273,6 +274,148 @@ p {
 .cart-button:focus-visible {
   background: var(--warm-white);
   border-color: var(--terracotta);
+}
+
+
+/* =========================================
+   MOBIEL MENU
+========================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 10px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  flex: 0 0 auto;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  margin: 5px auto;
+
+  background: var(--charcoal);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.22s ease,
+    opacity 0.18s ease;
+}
+
+.mobile-menu-button.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-button.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu[hidden] {
+  display: none;
+}
+
+.mobile-menu {
+  position: absolute;
+
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  z-index: 45;
+
+  max-height: calc(100vh - 88px);
+
+  overflow-y: auto;
+
+  background: var(--cream);
+
+  border-bottom: 1px solid var(--warm-taupe);
+
+  box-shadow: 0 14px 30px rgba(45, 41, 37, 0.08);
+}
+
+.mobile-nav {
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+  padding: 26px 34px 38px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-main {
+  display: block;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--warm-taupe);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-main:hover,
+.mobile-nav-main:focus-visible {
+  color: var(--terracotta);
+}
+
+.mobile-nav-group {
+  border-bottom: 1px solid var(--warm-taupe);
+}
+
+.mobile-nav-group .mobile-nav-main {
+  border-bottom: 0;
+
+  padding-bottom: 11px;
+}
+
+.mobile-nav-sub {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 0 17px 16px;
+}
+
+.mobile-nav-sub a {
+  padding: 7px 0;
+
+  color: var(--stone);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-sub a:hover,
+.mobile-nav-sub a:focus-visible {
+  color: var(--terracotta);
 }
 
 
@@ -1651,13 +1794,15 @@ footer {
 
 
 /* =========================================
-   TABLET — 1000px
+   TABLET / MOBIEL MENU — 1000px
 ========================================= */
 
 @media (max-width: 1000px) {
 
   .nav {
     grid-template-columns: auto 1fr auto;
+
+    gap: 20px;
   }
 
   .nav-left {
@@ -1666,6 +1811,21 @@ footer {
 
   .brand {
     justify-self: start;
+  }
+
+  .nav-right {
+    grid-column: 3;
+
+    gap: 14px;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-nav {
+    padding-left: 34px;
+    padding-right: 34px;
   }
 
   .hero-grid {
@@ -1777,7 +1937,7 @@ footer {
 
 
 /* =========================================
-   MOBIEL
+   MOBIEL — 650px
 ========================================= */
 
 @media (max-width: 650px) {
@@ -1799,6 +1959,8 @@ footer {
     height: 88px;
 
     padding: 0 18px;
+
+    gap: 10px;
   }
 
   .brand {
@@ -1806,7 +1968,7 @@ footer {
   }
 
   .nav-right {
-    gap: 10px;
+    gap: 6px;
   }
 
   .nav-right .nav-link {
@@ -1817,6 +1979,38 @@ footer {
     padding: 8px 9px;
 
     font-size: 9px;
+
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+
+    padding: 8px;
+  }
+
+  .mobile-menu-button span {
+    width: 20px;
+  }
+
+  .mobile-nav {
+    padding: 18px 18px 30px;
+  }
+
+  .mobile-nav-main {
+    padding: 15px 0;
+
+    font-size: 11px;
+  }
+
+  .mobile-nav-sub {
+    padding-left: 12px;
+    padding-bottom: 15px;
+  }
+
+  .mobile-nav-sub a {
+    font-size: 10px;
   }
 
   .eyebrow {
@@ -2081,6 +2275,38 @@ footer {
     flex-direction: column;
 
     gap: 8px;
+  }
+
+}
+
+
+/* =========================================
+   ZEER SMAL MOBIEL
+========================================= */
+
+@media (max-width: 420px) {
+
+  .brand {
+    width: 112px;
+  }
+
+  .cart-button {
+    padding: 7px 7px;
+
+    font-size: 8px;
+  }
+
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-copy h1 {
+    font-size: 34px;
+  }
+
+  .page-title {
+    font-size: 33px;
   }
 
 }
