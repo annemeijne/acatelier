@@ -16,27 +16,64 @@ function getCategoryFromPage() {
   return null;
 }
 
+
 function createProductCard(slug, product) {
   const card = document.createElement("a");
+
   card.className = "product-card";
-  card.href = `/product.html?product=${slug}`;
 
-  const image = document.createElement("img");
-  image.src = product.mainImage.src;
-  image.alt = product.mainImage.alt;
+  const categoryUrl =
+    product.categoryUrl.endsWith("/")
+      ? product.categoryUrl
+      : `${product.categoryUrl}/`;
 
-  const info = document.createElement("div");
-  info.className = "product-info";
+  card.href =
+    `${categoryUrl}${slug}/`;
 
-  const title = document.createElement("h3");
-  title.textContent = product.name;
 
-  const price = document.createElement("p");
-  price.textContent = product.price;
+  const image =
+    document.createElement("img");
 
-  const stock = document.createElement("span");
-  stock.className = "stock";
-  stock.textContent = product.availability;
+  image.src =
+    product.mainImage.src;
+
+  image.alt =
+    product.mainImage.alt;
+
+  image.loading =
+    "lazy";
+
+
+  const info =
+    document.createElement("div");
+
+  info.className =
+    "product-info";
+
+
+  const title =
+    document.createElement("h3");
+
+  title.textContent =
+    product.name;
+
+
+  const price =
+    document.createElement("p");
+
+  price.textContent =
+    product.price || "Niet te koop";
+
+
+  const stock =
+    document.createElement("span");
+
+  stock.className =
+    "stock";
+
+  stock.textContent =
+    product.availability;
+
 
   info.appendChild(title);
   info.appendChild(price);
@@ -48,122 +85,245 @@ function createProductCard(slug, product) {
   return card;
 }
 
+
 function getNumericPrice(product) {
-  if (typeof product.priceValue === "number") {
+  if (
+    typeof product.priceValue === "number" &&
+    Number.isFinite(product.priceValue)
+  ) {
     return product.priceValue;
   }
 
   return null;
 }
 
+
 function getProductDate(product) {
-  if (product.publishedDate) {
-    return new Date(product.publishedDate).getTime();
+  if (!product.publishedDate) {
+    return 0;
   }
 
-  return 0;
+  const timestamp =
+    new Date(product.publishedDate).getTime();
+
+  return Number.isNaN(timestamp)
+    ? 0
+    : timestamp;
 }
 
-function sortProducts(productsList, sortValue, category) {
-  const sorted = [...productsList];
+
+function sortProducts(
+  productsList,
+  sortValue,
+  category
+) {
+  const sorted =
+    [...productsList];
+
 
   switch (sortValue) {
+
     case "newest":
       return sorted.sort(
-        ([, a], [, b]) => getProductDate(b) - getProductDate(a)
+        ([, a], [, b]) =>
+          getProductDate(b) -
+          getProductDate(a)
       );
+
 
     case "oldest":
       return sorted.sort(
-        ([, a], [, b]) => getProductDate(a) - getProductDate(b)
+        ([, a], [, b]) =>
+          getProductDate(a) -
+          getProductDate(b)
       );
 
+
     case "price-high":
-      return sorted.sort(([, a], [, b]) => {
-        const priceA = getNumericPrice(a);
-        const priceB = getNumericPrice(b);
+      return sorted.sort(
+        ([, a], [, b]) => {
+          const priceA =
+            getNumericPrice(a);
 
-        if (priceA === null && priceB === null) return 0;
-        if (priceA === null) return 1;
-        if (priceB === null) return -1;
+          const priceB =
+            getNumericPrice(b);
 
-        return priceB - priceA;
-      });
+          if (
+            priceA === null &&
+            priceB === null
+          ) {
+            return 0;
+          }
+
+          if (priceA === null) {
+            return 1;
+          }
+
+          if (priceB === null) {
+            return -1;
+          }
+
+          return priceB - priceA;
+        }
+      );
+
 
     case "price-low":
-      return sorted.sort(([, a], [, b]) => {
-        const priceA = getNumericPrice(a);
-        const priceB = getNumericPrice(b);
+      return sorted.sort(
+        ([, a], [, b]) => {
+          const priceA =
+            getNumericPrice(a);
 
-        if (priceA === null && priceB === null) return 0;
-        if (priceA === null) return 1;
-        if (priceB === null) return -1;
+          const priceB =
+            getNumericPrice(b);
 
-        return priceA - priceB;
-      });
+          if (
+            priceA === null &&
+            priceB === null
+          ) {
+            return 0;
+          }
+
+          if (priceA === null) {
+            return 1;
+          }
+
+          if (priceB === null) {
+            return -1;
+          }
+
+          return priceA - priceB;
+        }
+      );
+
 
     case "recommended":
-    default:
-      return sorted.sort(([slugA], [slugB]) => {
-        const order = recommendedOrder[category] || [];
+    default: {
+      const order =
+        recommendedOrder?.[category] || [];
 
-        const indexA = order.indexOf(slugA);
-        const indexB = order.indexOf(slugB);
+      const orderMap =
+        new Map(
+          order.map(
+            (slug, index) => [
+              slug,
+              index
+            ]
+          )
+        );
 
-        const safeA = indexA === -1 ? 999 : indexA;
-        const safeB = indexB === -1 ? 999 : indexB;
+      return sorted.sort(
+        ([slugA], [slugB]) => {
+          const indexA =
+            orderMap.has(slugA)
+              ? orderMap.get(slugA)
+              : Number.MAX_SAFE_INTEGER;
 
-        return safeA - safeB;
-      });
+          const indexB =
+            orderMap.has(slugB)
+              ? orderMap.get(slugB)
+              : Number.MAX_SAFE_INTEGER;
+
+          return indexA - indexB;
+        }
+      );
+    }
   }
 }
 
+
 function renderProducts() {
-  const grid = document.getElementById("product-grid");
-  const sortSelect = document.getElementById("product-sort");
+  const grid =
+    document.getElementById(
+      "product-grid"
+    );
+
+  const sortSelect =
+    document.getElementById(
+      "product-sort"
+    );
+
 
   if (!grid) {
     return;
   }
 
-  const category = getCategoryFromPage();
+
+  const category =
+    getCategoryFromPage();
+
 
   if (!category) {
     return;
   }
 
-  let categoryProducts = Object.entries(products).filter(
-    ([, product]) => product.category === category
-  );
 
-  const sortValue = sortSelect
-    ? sortSelect.value
-    : "recommended";
-
-  categoryProducts = sortProducts(
-    categoryProducts,
-    sortValue,
-    category
-  );
-
-  grid.innerHTML = "";
-
-  categoryProducts.forEach(([slug, product]) => {
-    grid.appendChild(
-      createProductCard(slug, product)
+  let categoryProducts =
+    Object.entries(products).filter(
+      ([, product]) =>
+        product.category === category
     );
-  });
+
+
+  const sortValue =
+    sortSelect
+      ? sortSelect.value
+      : "recommended";
+
+
+  categoryProducts =
+    sortProducts(
+      categoryProducts,
+      sortValue,
+      category
+    );
+
+
+  grid.innerHTML =
+    "";
+
+
+  if (!categoryProducts.length) {
+    const message =
+      document.createElement("p");
+
+    message.textContent =
+      "Er zijn nog geen creaties in deze categorie.";
+
+    grid.appendChild(message);
+
+    return;
+  }
+
+
+  categoryProducts.forEach(
+    ([slug, product]) => {
+      grid.appendChild(
+        createProductCard(
+          slug,
+          product
+        )
+      );
+    }
+  );
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderProducts();
 
-  const sortSelect = document.getElementById("product-sort");
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    renderProducts();
 
-  if (sortSelect) {
-    sortSelect.addEventListener(
-      "change",
-      renderProducts
-    );
+    const sortSelect =
+      document.getElementById(
+        "product-sort"
+      );
+
+    if (sortSelect) {
+      sortSelect.addEventListener(
+        "change",
+        renderProducts
+      );
+    }
   }
-});
+);
