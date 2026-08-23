@@ -5,91 +5,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Unravel sweater — ACA</title>
+  <!-- SEO -->
+  <title>Creatie | ACA — Annemeijne's Creatieve Atelier</title>
 
   <meta
+    id="page-description"
     name="description"
-    content="Unravel sweater van ACA — een uniek handgemaakt gehaakt kledingstuk van verschillende soorten garen."
+    content="Unieke handgemaakte creatie van ACA."
   >
 
-  <link rel="stylesheet" href="../../../style.css?v=4">
+  <link
+    id="canonical-url"
+    rel="canonical"
+    href=""
+  >
+
+  <!-- Social media / delen -->
+  <meta property="og:type" content="product">
+
+  <meta
+    id="og-title"
+    property="og:title"
+    content="Creatie | ACA"
+  >
+
+  <meta
+    id="og-description"
+    property="og:description"
+    content="Unieke handgemaakte creatie van ACA."
+  >
+
+  <meta
+    id="og-url"
+    property="og:url"
+    content=""
+  >
+
+  <meta
+    id="og-image"
+    property="og:image"
+    content=""
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="/style.css?v=19">
+
+  <script src="/components.js" defer></script>
+  <script src="/products.js" defer></script>
+  <script src="/product.js" defer></script>
 </head>
 
 <body>
 
-<div class="topbar">
-  Handgemaakt in Nijmegen · vaak maar één · altijd met aandacht
-</div>
-
-<header class="site-header">
-
-  <nav class="nav">
-
-    <div class="nav-left">
-
-      <div class="dropdown">
-
-        <a class="nav-link" href="../../">
-          Creaties
-        </a>
-
-        <div class="dropdown-panel">
-          <a href="../">Kleding</a>
-          <a href="../../tierlantijnen/">Tierlantijnen</a>
-          <a href="../../geschreven/">Geschreven</a>
-        </div>
-
-      </div>
-
-      <a class="nav-link" href="../../../over-aca/">
-        Over ACA
-      </a>
-
-      <a class="nav-link" href="../../../faq/">
-        FAQ
-      </a>
-
-    </div>
-
-    <a class="brand" href="../../../">
-      <img src="../../../aca-logo.png" alt="ACA">
-    </a>
-
-    <div class="nav-right">
-
-      <a class="nav-link" href="../../../contact/">
-        Contact
-      </a>
-
-      <a class="cart-button" href="#">
-        Winkelmandje · 0
-      </a>
-
-    </div>
-
-  </nav>
-
-</header>
+<div id="site-header"></div>
 
 
 <main class="product-page">
 
-  <div class="product-breadcrumb">
-    <a href="../../">Creaties</a>
-    <span>·</span>
-    <a href="../">Kleding</a>
-    <span>·</span>
-    <span>Unravel sweater</span>
-  </div>
+  <nav
+    class="product-breadcrumb"
+    aria-label="Kruimelpad"
+  >
+    <a href="/creaties/">
+      Creaties
+    </a>
+
+    <span aria-hidden="true">
+      ·
+    </span>
+
+    <a
+      id="breadcrumb-category"
+      href="/creaties/kleding/"
+    >
+      Kleding
+    </a>
+
+    <span aria-hidden="true">
+      ·
+    </span>
+
+    <span
+      id="breadcrumb-product"
+      aria-current="page"
+    ></span>
+  </nav>
 
 
   <section class="product-hero">
 
     <div class="product-hero-image">
+
       <img
-        src="images/unravel-a.jpeg"
-        alt="Unravel sweater gedragen"
+        id="product-main-image"
+        src=""
+        alt=""
+        fetchpriority="high"
       >
+
     </div>
 
 
@@ -99,28 +113,40 @@
         Uniek handgemaakt
       </p>
 
-      <h1 class="product-title">
-        Unravel sweater
-      </h1>
+      <h1
+        class="product-title"
+        id="product-name"
+      ></h1>
 
-      <p class="product-lead">
-        Een handgehaakte cropped sweater in zachte tinten groen,
-        blauw, lila en crème. Verschillende soorten garen en de
-        zichtbare losse draden geven het ontwerp zijn eigen,
-        onregelmatige karakter.
-      </p>
+      <p
+        class="product-lead"
+        id="product-lead"
+      ></p>
 
 
       <div class="product-meta">
 
         <div>
-          <span class="meta-label">Prijs</span>
-          <strong>Wordt nog ingevuld</strong>
+
+          <span class="meta-label">
+            Prijs
+          </span>
+
+          <strong id="product-price">
+          </strong>
+
         </div>
 
+
         <div>
-          <span class="meta-label">Beschikbaarheid</span>
-          <strong>Uniek exemplaar</strong>
+
+          <span class="meta-label">
+            Beschikbaarheid
+          </span>
+
+          <strong id="product-availability">
+          </strong>
+
         </div>
 
       </div>
@@ -133,6 +159,7 @@
       >
         Binnenkort te bestellen
       </button>
+
 
       <p class="product-note">
         ACA-creaties ontstaan zonder massaproductie en zijn niet bedoeld
@@ -152,27 +179,15 @@
         Het verhaal
       </p>
 
-      <h2 class="section-title">
-        Losse draden mogen gezien worden.
-      </h2>
+      <h2
+        class="section-title"
+        id="product-story-title"
+      ></h2>
 
     </div>
 
-    <p>
-      De Unravel sweater is in 2024–2025 met de hand gehaakt in Nijmegen.
-      Voor het ontwerp gebruikte ik geen patroon. Wel gebruikte ik de
-      werkwijze uit de Imperfect sweater-video van Belina Bellwood als
-      uitgangspunt. Verschillende soorten garen en de zichtbare losse
-      draden maken de trui bewust onregelmatig en uniek.
-      <br><br>
-      <a
-        href="https://youtu.be/DIzU22ON_rg?si=jK1ip5QgKoHBd8gE"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Bekijk de Imperfect sweater-video van Belina Bellwood
-      </a>
-    </p>
+
+    <p id="product-story"></p>
 
   </section>
 
@@ -183,115 +198,28 @@
       Productdetails
     </p>
 
-    <div class="product-details-grid">
-
-      <div>
-        <span class="meta-label">Materialen</span>
-        <strong>
-          Een mix van diverse katoengaren, wolgaren, melkkatoengaren en acrylgaren
-        </strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Techniek</span>
-        <strong>Gehaakt</strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Ontwerp</span>
-        <strong>Zonder patroon</strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Gebaseerd op</span>
-        <strong>
-          <a
-            href="https://youtu.be/DIzU22ON_rg?si=jK1ip5QgKoHBd8gE"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Imperfect sweater — Belina Bellwood
-          </a>
-        </strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Gemaakt in</span>
-        <strong>Nijmegen</strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Jaar</span>
-        <strong>2024–2025</strong>
-      </div>
-
-      <div>
-        <span class="meta-label">Beschikbaarheid</span>
-        <strong>Uniek exemplaar</strong>
-      </div>
-
-    </div>
+    <div
+      class="product-details-grid"
+      id="product-details"
+    ></div>
 
   </section>
 
 
-  <section class="product-gallery">
-
-    <figure class="gallery-large">
-      <img
-        src="images/unravel-b.jpeg"
-        alt="Unravel sweater gedragen, tweede aanzicht"
-      >
-    </figure>
-
-    <figure>
-      <img
-        src="images/unravel-c.jpeg"
-        alt="Achterzijde van de Unravel sweater gedragen"
-      >
-    </figure>
-
-    <figure>
-      <img
-        src="images/unravel-d.jpeg"
-        alt="Unravel sweater op hanger, voorzijde"
-      >
-    </figure>
-
-    <figure>
-      <img
-        src="images/unravel-e.jpeg"
-        alt="Unravel sweater op hanger, achterzijde"
-      >
-    </figure>
-
-    <figure>
-      <img
-        src="images/unravel-f.jpeg"
-        alt="Detail van de hals van de Unravel sweater"
-      >
-    </figure>
-
-    <figure>
-      <img
-        src="images/unravel-g.jpeg"
-        alt="Detail van mouw en constructie van de Unravel sweater"
-      >
-    </figure>
-
-    <figure class="gallery-large">
-      <img
-        src="images/unravel-h.jpeg"
-        alt="Detail van het haakwerk en de losse draden van de Unravel sweater"
-      >
-    </figure>
-
-  </section>
+  <section
+    class="product-gallery"
+    id="product-gallery"
+    aria-label="Productfoto's"
+  ></section>
 
 
   <section class="product-back">
 
-    <a class="button secondary" href="../">
+    <a
+      class="button secondary"
+      id="product-back"
+      href="/creaties/kleding/"
+    >
       ← Terug naar kleding
     </a>
 
@@ -300,109 +228,49 @@
 </main>
 
 
-<footer>
+<div id="site-footer"></div>
 
-  <div class="footer-inner">
 
-    <div class="footer-grid">
-
-      <div class="footer-brand">
-
-        <img
-  class="footer-logo"
-  src="../../../aca-logo%20inverted.png"
-  alt="ACA"
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Vergrote productfoto"
+  aria-hidden="true"
 >
-
-        <p>
-          Annemeijne's Creatieve Atelier.
-          Handgemaakte creaties uit Nijmegen.
-        </p>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Creaties</h4>
-
-        <a href="../">Kleding</a>
-        <a href="../../tierlantijnen/">Tierlantijnen</a>
-        <a href="../../geschreven/">Geschreven</a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>ACA</h4>
-
-        <a href="../../../over-aca/">Over ACA</a>
-        <a href="../../../contact/">Contact</a>
-        <a href="../../../faq/">Veelgestelde vragen</a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Informatie</h4>
-
-        <a href="#">Bestellen & betalen</a>
-        <a href="#">Verzending & ophalen</a>
-        <a href="#">Retourneren</a>
-        <a href="#">Privacy</a>
-        <a href="#">Voorwaarden</a>
-
-      </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © ACA — Annemeijne's Creatieve Atelier
-      </span>
-
-      <span>
-        Handgemaakt in Nijmegen
-      </span>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<div class="lightbox" id="lightbox" aria-hidden="true">
 
   <button
     class="lightbox-close"
     id="lightbox-close"
+    type="button"
     aria-label="Sluiten"
   >
     ×
   </button>
 
+
   <button
     class="lightbox-prev"
     id="lightbox-prev"
+    type="button"
     aria-label="Vorige foto"
   >
     ‹
   </button>
 
+
   <img
     id="lightbox-image"
     src=""
-    alt="Vergrote productfoto"
+    alt=""
   >
+
 
   <button
     class="lightbox-next"
     id="lightbox-next"
+    type="button"
     aria-label="Volgende foto"
   >
     ›
@@ -410,143 +278,6 @@
 
 </div>
 
-
-<script>
-
-  const galleryImages = Array.from(
-    document.querySelectorAll(
-      '.product-gallery img, .product-hero-image img'
-    )
-  );
-
-  const lightbox =
-    document.getElementById('lightbox');
-
-  const lightboxImage =
-    document.getElementById('lightbox-image');
-
-  const closeButton =
-    document.getElementById('lightbox-close');
-
-  const prevButton =
-    document.getElementById('lightbox-prev');
-
-  const nextButton =
-    document.getElementById('lightbox-next');
-
-  let currentImage = 0;
-
-
-  function showImage(index) {
-
-    currentImage =
-      (index + galleryImages.length)
-      % galleryImages.length;
-
-    lightboxImage.src =
-      galleryImages[currentImage].src;
-
-    lightboxImage.alt =
-      galleryImages[currentImage].alt;
-  }
-
-
-  function openLightbox(index) {
-
-    showImage(index);
-
-    lightbox.classList.add('open');
-
-    lightbox.setAttribute(
-      'aria-hidden',
-      'false'
-    );
-  }
-
-
-  function closeLightbox() {
-
-    lightbox.classList.remove('open');
-
-    lightbox.setAttribute(
-      'aria-hidden',
-      'true'
-    );
-  }
-
-
-  galleryImages.forEach(
-    (image, index) => {
-
-      image.addEventListener(
-        'click',
-        () => openLightbox(index)
-      );
-
-    }
-  );
-
-
-  closeButton.addEventListener(
-    'click',
-    closeLightbox
-  );
-
-
-  prevButton.addEventListener(
-    'click',
-    () => {
-      showImage(currentImage - 1);
-    }
-  );
-
-
-  nextButton.addEventListener(
-    'click',
-    () => {
-      showImage(currentImage + 1);
-    }
-  );
-
-
-  lightbox.addEventListener(
-    'click',
-    (event) => {
-
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-
-    }
-  );
-
-
-  document.addEventListener(
-    'keydown',
-    (event) => {
-
-      if (
-        !lightbox.classList.contains('open')
-      ) {
-        return;
-      }
-
-      if (event.key === 'Escape') {
-        closeLightbox();
-      }
-
-      if (event.key === 'ArrowLeft') {
-        showImage(currentImage - 1);
-      }
-
-      if (event.key === 'ArrowRight') {
-        showImage(currentImage + 1);
-      }
-
-    }
-  );
-
-</script>
-
 </body>
+
 </html>
