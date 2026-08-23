@@ -267,5 +267,51 @@ mainImage: {
         alt: "Queen bee top van ACA plat neergelegd, met de verschillende gebreide delen en strepen zichtbaar"
       }
     ]
-  }
+  },
+
+  "laine-top": {
+  name: "Laine top",
+  category: "Kleding",
+  categoryUrl: "/creaties/kleding/",
+
+  price: "Prijs volgt",
+  availability: "Uniek exemplaar",
+
+  publishedDate: "2026-08-23",
+  priceValue: null,
+
+  lead:
+    "Een handgehaakte haltertop in zachte gemêleerde tinten. De top is gemaakt van een wolmix en heeft dunne bandjes die in de nek worden gestrikt en bredere banden die op de rug sluiten.",
+
+  storyTitle: "Al hakend gevormd.",
+
+  story:
+    "De Laine top maakte ik in 2026 in Frankrijk. Ik werkte zonder patroon en heb de vorm gaandeweg bepaald tijdens het haken. De top sluit met dunne bandjes in de nek en met bredere banden op de rug, waardoor de pasvorm zelf te verstellen is. Het gemêleerde wolgaren geeft het haakwerk een zachte, rustige kleurwisseling.",
+
+  details: [
+    ["Materiaal", "75% wol, 25% polyamide"],
+    ["Techniek", "Gehaakt"],
+    ["Ontwerp", "Zonder patroon, gaandeweg gevormd"],
+    ["Sluiting", "Strikbandjes in de nek en bredere strikbanden op de rug"],
+    ["Gemaakt in", "Frankrijk"],
+    ["Jaar", "2026"],
+    ["Beschikbaarheid", "Uniek exemplaar"]
+  ],
+
+  mainImage: {
+    src: "/creaties/kleding/laine-top/images/laine-top-1-cover.jpg",
+    alt: "Handgehaakte Laine top van ACA gedragen, met haltermodel en gemêleerd wolgaren"
+  },
+
+  images: [
+    {
+      src: "/creaties/kleding/laine-top/images/laine-top-2.jpg",
+      alt: "Laine top van ACA gedragen voor een ronde spiegel, met de aansluitende pasvorm zichtbaar"
+    },
+    {
+      src: "/creaties/kleding/laine-top/images/laine-top-3.jpg",
+      alt: "Close-up van het gemêleerde haakwerk van de Laine top in blauw, beige en roze tinten"
+    }
+  ]
+}
 };
