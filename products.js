@@ -149,31 +149,31 @@ const products = {
     ["Beschikbaarheid", "Uniek exemplaar"]
   ],
 
-  mainImage: {
-    src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-1.png",
-    alt: "Ruime crèmekleurige handgehaakte Your favourite sweater van ACA, gedragen met beige broek"
-  },
+mainImage: {
+  src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-1.png",
+  alt: "Crèmekleurige handgehaakte Your favourite sweater van ACA, oversized gedragen met beige broek"
+},
 
   images: [
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-3.png",
+      src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-3.png",
       alt: "Crèmekleurige handgehaakte Your favourite sweater van ACA volledig zichtbaar aan een witte hanger"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-4.png",
-      alt: "Detail van de gehaakte hals en ribsteek van de Your favourite sweater"
+      src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-4.png",
+      alt: "Detail van de open haakstructuur bij de hals en schouder van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-5.png",
-      alt: "Detail van de ribsteek aan de onderkant van de Your favourite sweater"
+      src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-5.png",
+      alt: "Detail van de dichtere haakstructuur en afwerking aan de onderkant van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-6.png",
-      alt: "Detail van de ribsteek en haakstructuur van de mouw van de Your favourite sweater"
+      src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-6.png",
+      alt: "Detail van de ribsteek en haakstructuur aan de mouw van de Your favourite sweater"
     },
     {
-      src: "/creaties/kleding/your-favourite-sweater/images/your-favourite-sweater-2.png",
-      alt: "Your favourite sweater van ACA gedragen in een ruime oversized pasvorm"
+      src: "/creaties/kleding/your-favourite-sweater-v2/images/your-favourite-sweater-2.png",
+      alt: "Your favourite sweater van ACA van voren gedragen in een ruime oversized pasvorm"
     }
   ]
 },
